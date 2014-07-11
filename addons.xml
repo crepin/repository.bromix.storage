@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="plugin.video.dmax_de" name="DMAX.de" version="1.0.3" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">DMAX.de media library</summary>
+		<summary lang="de">Mediathek für DMAX.de</summary>
+		<description lang="en">DMAX.de you'll find a wide range of series such as BEAR GRYLLS, AUCTION HUNTERS, DER GEFÄHRLICHSTE JOB ALASKAS, GOLDRAUSCH IN ALASKA on FAST'N'LOUD, FREESTYLE FISHING, OFFROAD SURVIVORS, MOONSHINERS, DIE GEBRAUCHTWAGEN-PROFIS to the MYTHBUSTERS.</description>
+		<description lang="de">Unter DMAX.de findest du ein großes Angebot von Serien wie BEAR GRYLLS, AUCTION HUNTERS, DER GEFÄHRLICHSTE JOB ALASKAS, GOLDRAUSCH IN ALASKA über FAST’N’LOUD, FREESTYLE-FISCHEN, OFFROAD SURVIVORS, MOONSHINERS, DIE GEBRAUCHTWAGEN-PROFIS bis hin zu den MYTHBUSTERS.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum>http://forum.xbmc.org/showthread.php?tid=198780</forum>
+		<website>www.dmax.de</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.video.dmax_de</source>
+	</extension>
+</addon>
+
+<addon id="plugin.video.netzkino_de" name="Netzkino.de" version="1.0.1" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Netzkino.de movies</summary>
+		<summary lang="de">Filme von Netzkino.de</summary>
+		<description lang="en">With Netzkino.de you can watch movies free and legal.</description>
+		<description lang="de">Mit der Netzkino.de kannst du kostenlos und legal Spielfilme schauen.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum></forum>
+		<website>http://www.voxnow.de/</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.video.vox_now</source>
+	</extension>
+</addon>
+
+<addon id="plugin.video.tlc_de" name="TLC.de" version="1.0.3" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">TLC.de media library</summary>
+		<summary lang="de">Mediathek für TLC.de</summary>
+		<description lang="en">TLC.de you'll find a wide range of series such as Cake Boss, Breaking Amish or Honey Boo Boo.</description>
+		<description lang="de">Unter TLC.de findest du ein großes Angebot von Serien wie Cake Boss, Breaking Amish oder Honey Boo Boo.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum>http://forum.xbmc.org/showthread.php?tid=198780</forum>
+		<website>www.dmax.de</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.video.dmax_de</source>
+	</extension>
+</addon>
+</addons>
