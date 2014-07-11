@@ -4,6 +4,7 @@ import zipfile
 import shutil
 
 root_url = 'https://github.com/bromix/'
+
 resources = [{'name': 'plugin.video.netzkino_de',
               'branch': 'master'},
              {'name': 'plugin.video.tlc_de',
@@ -87,8 +88,10 @@ def is_addon_dir( addon ):
     # very very simple and weak check that it is an addon dir.
     # intended to be fast, not totally accurate.
     # skip any file or .svn folder
-    if not os.path.isdir( addon ) or addon == ".svn": return False
-    else: return True
+    if not os.path.isdir( addon ) or addon == '.svn' or addon=='.git':
+        return False
+    else:
+        return True
 
                     
 class Generator:
@@ -352,19 +355,23 @@ def download():
         file = open(local_zip_file, 'rb')
         zipFile = zipfile.ZipFile(file)
         
-        print("Extracting\n%s" % ( local_zip_file))
-        zipFile.extractall()
-        
         old_folder_name = '%s-%s' % (resource['name'] ,resource['branch'])
         new_folder_name = '%s' % (resource['name'])
-        
-        print("Renaming\n%s to %s" % ( old_folder_name, new_folder_name))
-        if os.path.exists(new_folder_name):
-            shutil.rmtree(new_folder_name)
-        
-        os.rename(old_folder_name, new_folder_name)
+               
+        print("Extracting\n%s" % ( local_zip_file))
+        for name in zipFile.namelist():
+            correct_path = name.replace(old_folder_name, new_folder_name)
+            if correct_path.endswith('/'):
+                if not os.path.exists(correct_path):
+                    os.mkdir(correct_path)
+            else:
+                _file = open(correct_path, 'wb')
+                _file.write(zipFile.read(name))
+                _file.close()
+            pass
         
         print("Cleaning up...\n")
+        zipFile.close()
         file.close()
         os.remove(local_zip_file)
         
