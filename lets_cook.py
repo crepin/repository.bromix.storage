@@ -334,7 +334,32 @@ class Compressor:
                               self.addon_version_number = (( re.compile( "version\=(.+?) " , re.DOTALL ).findall( header ) )[0]).strip()
               
 
-
+def cleanUp():
+    print("Cleaning up...\n")
+    for resource in resources:
+        download_url = '%s%s/archive/%s.zip' % (root_url, resource['name'] ,resource['branch'])
+        
+        local_zip_file = '%s-%s.zip' % (resource['name'] ,resource['branch'])
+        
+        if os.path.exists(local_zip_file):
+            os.remove(local_zip_file)
+        
+        new_folder_name = '%s' % (resource['name'])
+        
+        items = os.listdir(new_folder_name)
+        for item in items:
+            full_path = os.path.join(new_folder_name, item)
+            if os.path.isdir(full_path):
+                print("Removing '%s'" % item)
+                shutil.rmtree(full_path)
+            else:
+                if item!='addon.xml' and item!='fanart.jpg' and item!='icon.png' and not item.endswith('.zip') and not item.startswith('changelog-'):
+                    print("Removing '%s'" % item)
+                    os.remove(full_path)
+            pass
+        
+        pass
+    
 def download():
     
     for resource in resources:
@@ -348,7 +373,7 @@ def download():
         if os.path.exists(local_zip_file):
             os.remove(local_zip_file)
         
-        print("Downloading\n%s" % ( download_url ))
+        print("Downloading '%s' from '%s'" % ( resource['name'], download_url ))
         req = urllib2.urlopen(download_url)
         file = open(local_zip_file, 'wb')
         file.write(req.read())
@@ -358,7 +383,7 @@ def download():
         old_folder_name = '%s-%s' % (resource['name'] ,resource['branch'])
         new_folder_name = '%s' % (resource['name'])
                
-        print("Extracting\n%s" % ( local_zip_file))
+        print("Extracting '%s'" % ( local_zip_file))
         for name in zipFile.namelist():
             correct_path = name.replace(old_folder_name, new_folder_name)
             if correct_path.endswith('/'):
@@ -370,7 +395,6 @@ def download():
                 _file.close()
             pass
         
-        print("Cleaning up...\n")
         zipFile.close()
         file.close()
         os.remove(local_zip_file)
@@ -381,3 +405,4 @@ if __name__ == "__main__":
     download()
     Compressor()
     Generator()
+    cleanUp()
