@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+<addon id="plugin.video.7tv" name="7TV" version="1.0.2" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">ProSieben, Sat.1, Kabel 1 and Sixx media library</summary>
+		<summary lang="de">Mediathek für ProSieben, Sat.1, Kabel 1 and Sixx</summary>
+		<description lang="en">Experience with 7TV a majority of shipments of ProSieben, SAT.1, kabel eins and sixx directly after the TV broadcast for free and for at least 7 days in full length - and the round-the-clock!</description>
+		<description lang="de">Erleben Sie mit 7TV einen Großteil der Sendungen von ProSieben, SAT.1, kabel eins und sixx direkt nach der TV-Ausstrahlung kostenlos und für mindestens 7 Tage in voller Länge – und das rund um die Uhr!</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum>http://forum.xbmc.org/showthread.php?tid=198550</forum>
+		<website>www.7tv.de</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.video.7tv</source>
+	</extension>
+</addon>
+
 <addon id="plugin.video.dmax_de" name="DMAX.de" version="1.0.3" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
@@ -46,6 +69,52 @@
 	</extension>
 </addon>
 
+<addon id="plugin.video.rtl2_now" name="RTL II NOW" version="1.0.1" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">RTL II NOW media library</summary>
+		<summary lang="de">Mediathek für RTL II NOW</summary>
+		<description lang="en">With RTL II NOW many series, shows, documentaries and magazines can be seen from the program of RTL II.</description>
+		<description lang="de">Mit RTL II NOW können viele Serien, Shows, Dokumentationen und Magazine aus dem Programm von RTL II geschaut werden.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum></forum>
+		<website>http://www.voxnow.de/</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.video.vox_now</source>
+	</extension>
+</addon>
+
+<addon id="plugin.video.rtl_now" name="RTL NOW" version="1.0.1" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">RTL NOW media library</summary>
+		<summary lang="de">Mediathek für RTL NOW</summary>
+		<description lang="en">With RTL NOW many series, shows, documentaries and magazines can be seen from the program of RTL.</description>
+		<description lang="de">Mit RTL NOW können viele Serien, Shows, Dokumentationen und Magazine aus dem Programm von RTL geschaut werden.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum></forum>
+		<website>http://www.voxnow.de/</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.video.vox_now</source>
+	</extension>
+</addon>
+
 <addon id="plugin.video.tlc_de" name="TLC.de" version="1.0.3" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
@@ -66,6 +135,29 @@
 		<website>www.dmax.de</website>
 		<email>bromix at gmx dot net</email>
 		<source>https://github.com/bromix/plugin.video.dmax_de</source>
+	</extension>
+</addon>
+
+<addon id="plugin.video.vox_now" name="VOX NOW" version="1.0.1" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">VOX NOW media library</summary>
+		<summary lang="de">Mediathek für VOX NOW</summary>
+		<description lang="en">With VOX NOW many series, shows, documentaries and magazines can be seen from the program of VOX.</description>
+		<description lang="de">Mit VOX NOW können viele Serien, Shows, Dokumentationen und Magazine aus dem Programm von VOX geschaut werden.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum></forum>
+		<website>http://www.voxnow.de/</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.video.vox_now</source>
 	</extension>
 </addon>
 </addons>

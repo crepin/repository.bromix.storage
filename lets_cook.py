@@ -6,12 +6,18 @@ import shutil
 root_url = 'https://github.com/bromix/'
 resources = [{'name': 'plugin.video.netzkino_de',
               'branch': 'master'},
-             
              {'name': 'plugin.video.tlc_de',
               'branch': 'master'},
-             
              {'name': 'plugin.video.dmax_de',
-              'branch': 'master'}
+              'branch': 'master'},
+             {'name': 'plugin.video.rtl_now',
+              'branch': 'master'},
+             {'name': 'plugin.video.rtl2_now',
+              'branch': 'master'},
+             {'name': 'plugin.video.vox_now',
+              'branch': 'master'},
+             {'name': 'plugin.video.7tv',
+              'branch': 'master'},
              ]
 
 # *
