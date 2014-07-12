@@ -1,8 +1,3 @@
-import urllib2
-import os
-import zipfile
-import shutil
-
 root_url = 'https://github.com/bromix/'
 
 resources = [{'name': 'plugin.video.netzkino_de',
@@ -43,6 +38,7 @@ To enable the auto-compressor, set the compress_addons setting to True
 NOTE: the settings.py of repository aggregator will override this setting.
 If you do this you must make sure the "datadir zip" parameter in the addon.xml of your repository file is set to "true".
 """
+import urllib2
 import os
 import shutil
 import md5
