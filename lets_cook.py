@@ -356,49 +356,47 @@ def cleanUp():
         
         pass
     
-def download():
-    
+def downloadAndExtract():
+    print("Downloading resources...")
     for resource in resources:
         download_url = '%s%s/archive/%s.zip' % (root_url, resource['name'] ,resource['branch'])
-        
-        local_zip_file = '%s-%s.zip' % (resource['name'] ,resource['branch'])
+        zip_file_name = '%s-%s.zip' % (resource['name'] ,resource['branch'])
         
         local_path = os.getcwd()
-        local_zip_file = os.path.join(local_path, local_zip_file)
-        
-        if os.path.exists(local_zip_file):
-            os.remove(local_zip_file)
+        zip_file_name = os.path.join(local_path, zip_file_name)
         
         print("Downloading '%s' from '%s'" % ( resource['name'], download_url ))
+        if os.path.exists(zip_file_name):
+            os.remove(zip_file_name)
+        download_file = open(zip_file_name, 'wb')
         req = urllib2.urlopen(download_url)
-        file = open(local_zip_file, 'wb')
-        file.write(req.read())
-        file = open(local_zip_file, 'rb')
-        zipFile = zipfile.ZipFile(file)
+        download_file.write(req.read())
+        download_file.close()
+        download_file = open(zip_file_name, 'rb')
+        zip_file = zipfile.ZipFile(download_file)
         
         old_folder_name = '%s-%s' % (resource['name'] ,resource['branch'])
         new_folder_name = '%s' % (resource['name'])
                
-        print("Extracting '%s'" % ( local_zip_file))
-        for name in zipFile.namelist():
+        print("Extracting '%s'" % (zip_file_name))
+        for name in zip_file.namelist():
             correct_path = name.replace(old_folder_name, new_folder_name)
             if correct_path.endswith('/'):
                 if not os.path.exists(correct_path):
                     os.mkdir(correct_path)
             else:
-                _file = open(correct_path, 'wb')
-                _file.write(zipFile.read(name))
-                _file.close()
+                tmp_file = open(correct_path, 'wb')
+                tmp_file.write(zip_file.read(name))
+                tmp_file.close()
             pass
         
-        zipFile.close()
-        file.close()
-        os.remove(local_zip_file)
-        
-        pass
+        zip_file.close()
+        download_file.close()
+        os.remove(zip_file_name)
+    print("Done downloading")
 
 if __name__ == "__main__":
-    download()
+    downloadAndExtract()
     Compressor()
     Generator()
     cleanUp()
