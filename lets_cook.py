@@ -21,7 +21,6 @@ import os
 import shutil
 import md5
 import zipfile
-import re
 import xml.etree.cElementTree as ET
 
 def cleanUp():
