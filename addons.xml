@@ -69,7 +69,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.rtl_now" name="RTL NOW" version="1.0.1" provider-name="bromix">
+<addon id="plugin.video.rtl_now" name="RTL NOW" version="1.0.2~beta" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -92,7 +92,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.rtl2_now" name="RTL II NOW" version="1.0.1" provider-name="bromix">
+<addon id="plugin.video.rtl2_now" name="RTL II NOW" version="1.0.2~beta" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -115,7 +115,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.vox_now" name="VOX NOW" version="1.0.1" provider-name="bromix">
+<addon id="plugin.video.vox_now" name="VOX NOW" version="1.0.2~beta" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
