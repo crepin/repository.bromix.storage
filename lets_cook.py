@@ -6,11 +6,11 @@ resources = [{'name': 'plugin.video.netzkino_de',
               'branch': 'master'},
              {'name': 'plugin.video.dmax_de',
               'branch': 'master'},
-             {'name': 'plugin.video.rtl_now',
+             {'name': 'plugin.video.bromix.rtl_now',
               'branch': 'master'},
-             {'name': 'plugin.video.rtl2_now',
+             {'name': 'plugin.video.bromix.rtl2_now',
               'branch': 'master'},
-             {'name': 'plugin.video.vox_now',
+             {'name': 'plugin.video.bromix.vox_now',
               'branch': 'master'},
              {'name': 'plugin.video.7tv',
               'branch': 'master'},
@@ -86,21 +86,21 @@ def compress():
                 }
         
     def _zipFiles(source_path, target_file_name):
-        zip = zipfile.ZipFile(target_file_name, 'w', compression=zipfile.ZIP_DEFLATED )
+        zip_file = zipfile.ZipFile(target_file_name, 'w', compression=zipfile.ZIP_DEFLATED )
 
         # get length of characters of what we will use as the root path       
         root_len = len( os.path.dirname(os.path.abspath(source_path)) )
 
         #recursive writer
-        for root, dirs, files in os.walk(source_path):
+        for root, directories, files in os.walk(source_path):
             # subtract the source file's root from the archive root - ie. make /Users/me/desktop/zipme.txt into just /zipme.txt 
             archive_root = os.path.abspath(root)[root_len:]
             
             for f in files:
                 fullpath = os.path.join( root, f )
                 archive_name = os.path.join( archive_root, f )
-                zip.write( fullpath, archive_name, zipfile.ZIP_DEFLATED )
-        zip.close()
+                zip_file.write( fullpath, archive_name, zipfile.ZIP_DEFLATED )
+        zip_file.close()
     
     print("Compressing resources...")
     local_path = os.getcwd()
