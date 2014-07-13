@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.video.bromix.break_videos" name="Break Videos" version="1.0.0~alpha" provider-name="bromix">
+<addon id="plugin.video.bromix.break_videos" name="Break Videos" version="1.0.0~alpha2" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -92,7 +92,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.bromix.rtl_now" name="RTL NOW" version="1.0.2~beta" provider-name="bromix">
+<addon id="plugin.video.bromix.rtl_now" name="RTL NOW" version="1.0.2~beta2" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -109,13 +109,13 @@
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
 		<forum></forum>
-		<website>http://www.voxnow.de/</website>
+		<website>http://rtl-now.rtl.de</website>
 		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.vox_now</source>
+		<source>https://github.com/bromix/plugin.video.bromix.rtl_now</source>
 	</extension>
 </addon>
 
-<addon id="plugin.video.bromix.rtl2_now" name="RTL II NOW" version="1.0.2~beta" provider-name="bromix">
+<addon id="plugin.video.bromix.rtl2_now" name="RTL II NOW" version="1.0.2~beta2" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -132,13 +132,13 @@
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
 		<forum></forum>
-		<website>http://www.voxnow.de/</website>
+		<website>http://rtl2now.rtl2.de</website>
 		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.vox_now</source>
+		<source>https://github.com/bromix/plugin.video.bromix.rtl2_now</source>
 	</extension>
 </addon>
 
-<addon id="plugin.video.bromix.vox_now" name="VOX NOW" version="1.0.2~beta" provider-name="bromix">
+<addon id="plugin.video.bromix.vox_now" name="VOX NOW" version="1.0.2~beta2" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -157,7 +157,7 @@
 		<forum></forum>
 		<website>http://www.voxnow.de/</website>
 		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.vox_now</source>
+		<source>https://github.com/bromix/plugin.video.bromix.vox_now</source>
 	</extension>
 </addon>
 
