@@ -8,18 +8,18 @@
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">VOX NOW media library</summary>
-		<summary lang="de">Mediathek für VOX NOW</summary>
-		<description lang="en">With VOX NOW many series, shows, documentaries and magazines can be seen from the program of VOX.</description>
-		<description lang="de">Mit VOX NOW können viele Serien, Shows, Dokumentationen und Magazine aus dem Programm von VOX geschaut werden.</description>
+		<summary lang="en">Watch funny videos from break.com</summary>
+		<summary lang="de">Schaue lustige Videos von break.com</summary>
+		<description lang="en">Break is the #1 source for funny videos. Get the hilarious videos today that will be viral tomorrow. Get the most awesome videos on Earth today, because being bored sucks.</description>
+		<description lang="de">Break ist die Nr. 1 Quelle für lustige Videos. Schaue die lustigen Videos, die morgen schon viral gehen. Hole dir die eindrucksvollsten Videos der Erde heute, denn Langeweile ist blöd.</description>
 		<disclaimer lang="en"></disclaimer>
 		<language>de</language>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
 		<forum></forum>
-		<website>http://www.voxnow.de/</website>
+		<website>http://www.break.com/</website>
 		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.vox_now</source>
+		<source>https://github.com/bromix/plugin.video.bromix.break_videos</source>
 	</extension>
 </addon>
 

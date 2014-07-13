@@ -16,8 +16,8 @@
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
 		<forum></forum>
-		<website>http://www.netzkino.de/</website>
+		<website>http://www.voxnow.de/</website>
 		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.netzkino_de</source>
+		<source>https://github.com/bromix/plugin.video.vox_now</source>
 	</extension>
 </addon>
