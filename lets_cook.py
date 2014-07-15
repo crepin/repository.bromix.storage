@@ -16,6 +16,8 @@ resources = [{'name': 'plugin.video.bromix.break_videos',
               'branch': 'master'},
              {'name': 'plugin.video.7tv',
               'branch': 'master'},
+             {'name': 'repository.bromix',
+              'branch': 'master'},
              ]
 
 import urllib2
@@ -142,7 +144,8 @@ def compress():
                 if os.path.exists(file_to_copy['To']):
                     os.remove(file_to_copy['To'])
                 
-                shutil.copy(file_to_copy['From'], file_to_copy['To'])
+                if os.path.exists(file_to_copy['From']):
+                    shutil.copy(file_to_copy['From'], file_to_copy['To'])
                 pass
         else:
             print("Skipping '%s' (path not found)" % resource['name'])
