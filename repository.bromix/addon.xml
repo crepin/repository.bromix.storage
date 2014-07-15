@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="repository.bromix" name="Bromix Add-ons" version="1.1.5" provider-name="bromix">
     <extension point="xbmc.addon.repository" name="Bromix Add-ons">
-		<info compressed="true">http://github.com/bromix/repository.bromix/raw/master/addons.xml</info>
-		<checksum>http://github.com/bromix/repository.bromix/raw/master/addons.xml.md5</checksum>
-		<datadir zip="true">http://github.com/bromix/repository.bromix/raw/master</datadir>
+		<info compressed="true">http://github.com/bromix/repository.bromix.storage/raw/master/addons.xml</info>
+		<checksum>http://github.com/bromix/repository.bromix.storage/raw/master/addons.xml.md5</checksum>
+		<datadir zip="true">http://github.com/bromix/repository.bromix.storage/raw/master</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>Bromix Add-ons</summary>
