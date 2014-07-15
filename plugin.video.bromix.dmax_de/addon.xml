@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.dmax_de" name="DMAX.de" version="1.0.3" provider-name="bromix">
+<addon id="plugin.video.bromix.dmax_de" name="DMAX.de" version="1.0.4" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -18,6 +18,6 @@
 		<forum>http://forum.xbmc.org/showthread.php?tid=198780</forum>
 		<website>www.dmax.de</website>
 		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.dmax_de</source>
+		<source>https://github.com/bromix/plugin.video.bromix.dmax_de</source>
 	</extension>
 </addon>

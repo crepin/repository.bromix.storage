@@ -1,3 +1,6 @@
+1.0.4
+- Had to change the ID because of conflicts with a third party repository
+
 1.0.3
 - FIX: stream does not start immediately (HD 720p)
 
