@@ -1,8 +1,8 @@
 root_url = 'https://github.com/bromix/'
 
-resources = [{'name': 'plugin.video.bromix.break_videos',
+resources = [{'name': 'plugin.video.bromix.break',
               'branch': 'master'},
-             {'name': 'plugin.video.netzkino_de',
+             {'name': 'plugin.video.bromix.netzkino_de',
               'branch': 'master'},
              {'name': 'plugin.video.bromix.tlc_de',
               'branch': 'master'},
