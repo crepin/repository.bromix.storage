@@ -1,0 +1,11 @@
+1.0.2~beta3
+- ADD: sorting methods - by label for shows
+
+1.0.2~beta2
+- integration tests for repository
+
+1.0.2~beta1
+- switched to beta
+
+1.0.1
+- initial version for tests

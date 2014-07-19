@@ -1,0 +1,8 @@
+1.0.2~beta
+- ADD: sort methods for movies
+
+1.0.1
+- initial version for repository tests
+
+1.0.0
+- initial version for tests
