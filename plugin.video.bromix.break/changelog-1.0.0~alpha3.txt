@@ -1,3 +1,7 @@
+1.0.0~alpha3
+- ADD: requirement for the youtube add-on
+- UPD: added icons for each channel
+
 1.0.0~alpha2
 - UPD: new icon
 - CHG: changed ID to 'plugin.video.bromix.break' 
