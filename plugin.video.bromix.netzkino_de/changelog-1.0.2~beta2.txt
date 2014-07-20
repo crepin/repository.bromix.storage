@@ -1,3 +1,6 @@
+1.0.2~beta2
+- FIX: corrected some namespaces
+
 1.0.2~beta
 - ADD: sort methods for movies
 
