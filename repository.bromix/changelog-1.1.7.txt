@@ -1,3 +1,6 @@
+1.1.7
+- new icon and added a fanart
+
 1.1.6
 - new icon and added a fanart
 
