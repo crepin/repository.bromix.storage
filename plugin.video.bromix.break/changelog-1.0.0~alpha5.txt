@@ -1,3 +1,6 @@
+1.0.0~alpha5
+- DEL: removed support for galleries, created own add-on for that
+
 1.0.0~alpha4
 - ADD: support for galleries
 
