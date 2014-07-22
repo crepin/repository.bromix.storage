@@ -1,2 +1,5 @@
+1.0.0~beta
+- beta for public tests
+
 1.0.0~alpha
 - development and testing
