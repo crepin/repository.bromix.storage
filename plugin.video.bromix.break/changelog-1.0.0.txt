@@ -1,3 +1,12 @@
+1.0.0
+- remove all kinds of HTML-Tags for clean descriptions
+- updated bromixbmc
+- removed beta status
+
+1.0.0~beta2
+- DEL: icons for each channel
+- ADD: 'Super Funny Videos'
+
 1.0.0~beta
 - moved to beta for public tests
 
