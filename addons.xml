@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.video.bromix.youtube" name="YouTube (ALPHA)" version="1.0.0~alpha3" provider-name="bromix">
+<addon id="plugin.video.bromix.youtube" name="YouTube (ALPHA)" version="1.0.0~alpha4" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
