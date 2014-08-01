@@ -1,7 +1,7 @@
 root_url = 'https://github.com/bromix/'
 
 resources = [{'name': 'plugin.video.bromix.youtube',
-              'branch': 'alpha12_dev'},#'branch': 'master'},
+              'branch': 'alpha13_dev'},#'branch': 'master'},
              {'name': 'plugin.picture.bromix.break',
               'branch': 'master'},
              {'name': 'plugin.video.bromix.break',
