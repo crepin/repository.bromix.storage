@@ -1,3 +1,6 @@
+1.1.8
+- little update to test the repository
+
 1.1.7
 - new icon and added a fanart
 
