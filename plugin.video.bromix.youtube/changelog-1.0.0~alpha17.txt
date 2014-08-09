@@ -1,3 +1,13 @@
+1.0.0~alpha17 (2014-08-10)
+- ADD: 'Go to CHANNEL' of a selected video
+- ADD: Support for 'Subscribe' and 'Unsubscribe' of channels
+- ADD: Full support for 'Like'
+- ADD: Remove own playlist via context menu
+- ADD: Show/Hide 'Browse Channels' via settings
+- FIX: Using only thumbnails from API v3 - 'My Subscriptions' is using v2 and returning different thumbnails
+- FIX: Displaying false channel in video description
+- FIX: Don't update search history before showing the search result
+
 1.0.0~alpha16 (2014-08-08)
 - FIX: provide 'Next Page' under 'My Subscriptions' if there are more results
 - ADD: Hide and show menu items via settings 
