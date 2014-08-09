@@ -19,7 +19,7 @@ resources = [{'name': 'plugin.video.bromix.youtube',
              {'name': 'plugin.video.bromix.vox_now',
               'branch': 'master'},
              {'name': 'plugin.video.7tv',
-              'branch': 'beta2'},#'branch': 'master'},
+              'branch': 'master'},
              {'name': 'repository.bromix',
               'branch': 'master'},
              ]
