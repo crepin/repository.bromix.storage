@@ -1,3 +1,9 @@
+1.0.0~alpha18 (2014-08-31)
+- ADD: Support for ETag - could improve performance
+- ADD: remove item of search history
+- FIX: #22 calculation of duration
+- FIX: #28 display 'general' instead of 'like' in settings
+
 1.0.0~alpha17 (2014-08-10)
 - ADD: 'Go to CHANNEL' of a selected video
 - ADD: Support for 'Subscribe' and 'Unsubscribe' of channels
