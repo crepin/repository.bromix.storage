@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="bromix.kodimon" name="kodimon" version="1.0.0~alpha3" provider-name="bromix">
+<addon id="bromix.kodimon" name="kodimon" version="1.0.0~beta" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -8,6 +8,9 @@
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
+        <summary lang="en">Kodi plugin framework tests</summary>
+        <description lang="en">Kodimon is a framework for developing plugins</description>
+        <disclaimer lang="en"></disclaimer>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
 	</extension>
