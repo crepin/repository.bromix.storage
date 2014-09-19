@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="bromix.kodimon" name="kodimon" version="1.0.0~alpha1" provider-name="bromix">
+<addon id="bromix.kodimon" name="kodimon" version="1.0.0~alpha2" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
