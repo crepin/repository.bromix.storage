@@ -21,7 +21,7 @@ resources = [{'name': 'kodimon',
              {'name': 'plugin.video.bromix.vox_now',
               'branch': 'master'},
              {'name': 'plugin.video.7tv',
-              'branch': 'master'},
+              'branch': 'dev_kodimon'},
              {'name': 'repository.bromix',
               'branch': 'master'},
              ]
