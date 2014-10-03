@@ -1,8 +1,6 @@
 root_url = 'https://github.com/bromix/'
 
-resources = [{'name': 'kodimon',
-              'branch': 'master'},
-             {'name': 'plugin.video.bromix.youtube',
+resources = [{'name': 'plugin.video.bromix.youtube',
               'branch': 'master'},
              {'name': 'plugin.picture.bromix.break',
               'branch': 'master'},
