@@ -1,3 +1,6 @@
+2.0.0~alpha
+UPD: moved to kodimon (framework)
+
 1.0.2~beta2
 - FIX: corrected some namespaces
 
