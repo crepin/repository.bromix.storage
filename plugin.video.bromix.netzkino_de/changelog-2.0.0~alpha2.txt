@@ -1,3 +1,6 @@
+2.0.0~alpha2 (2014-10-11)
+UPD: internal testing
+
 2.0.0~alpha
 UPD: moved to kodimon (framework)
 
