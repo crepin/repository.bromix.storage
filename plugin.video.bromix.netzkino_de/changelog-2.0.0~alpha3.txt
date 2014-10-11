@@ -1,4 +1,6 @@
-2.0.0~alpha2 (2014-10-11)
+2.0.0~alpha3 (2014-10-11)
+ADD: setting for caching size (1-25 MB / default 5 MB)
+FIX: crash while using dumdb for caching under android
 UPD: internal testing
 
 2.0.0~alpha

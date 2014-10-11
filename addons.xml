@@ -70,7 +70,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.bromix.netzkino_de" name="Netzkino.de" version="2.0.0~alpha2" provider-name="bromix">
+<addon id="plugin.video.bromix.netzkino_de" name="Netzkino.de" version="2.0.0~alpha3" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -208,7 +208,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.7tv" name="7TV" version="2.0.1~alpha" provider-name="bromix">
+<addon id="plugin.video.7tv" name="7TV" version="2.0.1~alpha2" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
