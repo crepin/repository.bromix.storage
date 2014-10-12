@@ -1,4 +1,5 @@
-2.0.1~alpha2 (2014-10-11)
+2.0.1~beta (2014-10-12)
+UPD: updated to api v2 of ProSieben Media GmbH (7TV)
 ADD: Set caching size via settings
 UPD: merged 'Archive' to 'Library' (like the app)
 FIX: crash in 'Highlights' of a channel
