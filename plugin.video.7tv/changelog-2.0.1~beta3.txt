@@ -1,3 +1,6 @@
+2.0.1~beta3 (2014-10-19)
+FIX: possible crash while accessing non existing folders
+
 2.0.1~beta2 (2014-10-12)
 FIX: show fanarts when ever possible (only cached)
 UPD: updated to api v2 of ProSieben Media GmbH (7TV)
