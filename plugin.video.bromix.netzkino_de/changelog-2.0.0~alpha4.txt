@@ -1,3 +1,6 @@
+2.0.0~alpha4 (2014-10-20)
+UPD: kodimon framework
+
 2.0.0~alpha3 (2014-10-11)
 ADD: setting for caching size (1-25 MB / default 5 MB)
 FIX: crash while using dumdb for caching under android
