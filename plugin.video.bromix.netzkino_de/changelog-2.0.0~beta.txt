@@ -1,3 +1,6 @@
+2.0.0~beta (2014-10-20)
+FIX: added missing source file
+
 2.0.0~alpha4 (2014-10-20)
 UPD: kodimon framework
 
