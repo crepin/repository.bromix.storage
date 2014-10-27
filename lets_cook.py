@@ -1,30 +1,18 @@
 root_url = 'https://github.com/bromix/'
 
-resources = [{'name': 'plugin.audio.bromix.soundcloud',
-              'branch': 'master'},
-             {'name': 'plugin.video.bromix.youtube',
-              'branch': 'master'},
-             {'name': 'plugin.picture.bromix.break',
-              'branch': 'master'},
-             {'name': 'plugin.video.bromix.break',
-              'branch': 'master'},
-             {'name': 'plugin.video.bromix.netzkino_de',
-              'branch': 'sqlite'},
-             {'name': 'plugin.video.bromix.tlc_de',
-              'branch': 'master'},
-             {'name': 'plugin.video.bromix.dmax_de',
-              'branch': 'master'},
-             {'name': 'plugin.video.bromix.rtl_now',
-              'branch': 'master'},
-             {'name': 'plugin.video.bromix.rtl2_now',
-              'branch': 'master'},
-             {'name': 'plugin.video.bromix.vox_now',
-              'branch': 'master'},
-             {'name': 'plugin.video.7tv',
-              'branch': 'sqlite'},
-             {'name': 'repository.bromix',
-              'branch': 'master'},
-             ]
+resources = [{'name': 'plugin.video.bromix.9gag.tv', 'branch': 'master'},
+             {'name': 'plugin.audio.bromix.soundcloud', 'branch': 'master'},
+             {'name': 'plugin.video.bromix.youtube', 'branch': 'master'},
+             {'name': 'plugin.picture.bromix.break', 'branch': 'master'},
+             {'name': 'plugin.video.bromix.break', 'branch': 'master'},
+             {'name': 'plugin.video.bromix.netzkino_de', 'branch': 'master'},
+             {'name': 'plugin.video.bromix.tlc_de', 'branch': 'master'},
+             {'name': 'plugin.video.bromix.dmax_de', 'branch': 'master'},
+             {'name': 'plugin.video.bromix.rtl_now', 'branch': 'master'},
+             {'name': 'plugin.video.bromix.rtl2_now', 'branch': 'master'},
+             {'name': 'plugin.video.bromix.vox_now', 'branch': 'master'},
+             {'name': 'plugin.video.7tv', 'branch': 'master'},
+             {'name': 'repository.bromix', 'branch': 'master'}]
 
 import urllib2
 import os
