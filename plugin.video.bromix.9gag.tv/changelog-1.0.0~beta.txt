@@ -1,2 +1,0 @@
-1.0.0~beta (2014-10-27)
-- initial version for tests
