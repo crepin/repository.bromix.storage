@@ -1,7 +1,7 @@
 root_url = 'https://github.com/bromix/'
 
 resources = [{'name': 'plugin.video.bromix.9gag.tv', 'branch': 'master'},
-             {'name': 'plugin.audio.bromix.soundcloud', 'branch': 'master'},
+             {'name': 'plugin.audio.soundcloud', 'branch': 'master'},
              {'name': 'plugin.video.bromix.youtube', 'branch': 'master'},
              {'name': 'plugin.picture.bromix.break', 'branch': 'master'},
              {'name': 'plugin.video.bromix.break', 'branch': 'master'},
