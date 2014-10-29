@@ -1,54 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.video.bromix.9gag.tv" name="9gag.tv" version="1.0.0~beta3" provider-name="bromix">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-        <import addon="plugin.video.youtube" version="4.4.10" />
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Videos worth watching.</summary>
-		<summary lang="de">Sehenswerte Videos.</summary>
-		<description lang="en">Videos worth watching. Best videos on the web. Updated daily.</description>
-		<description lang="de">Sehenswerte Videos. Die besten Videos im Internet. Täglich aktualisiert.</description>
-		<disclaimer lang="en"></disclaimer>
-		<language>de</language>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-		<forum></forum>
-		<website>http://www.9gag.tv/</website>
-		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.bromix.9gag.tv</source>
-	</extension>
-</addon>
-
-<addon id="plugin.audio.soundcloud" name="SoundCloud" version="1.0.0" provider-name="bromix">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.module.requests" version="2.3.0"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>audio</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">SoundCloud is an online audio distribution platform.</summary>
-		<summary lang="de">Soundcloud ist ein Online-Audio-Vertriebsplattform.</summary>
-		<description lang="en">SoundCloud is an online audio distribution platform that enables its users to upload, record, promote and share their originally-created sounds.</description>
-		<description lang="de">Soundcloud ist ein Online-Audio-Vertriebsplattform. Benutzer können ihre ursprünglich erstelle Music hochladen, aufnehmen und unter weiteren Benutzern teilen.</description>
-		<disclaimer lang="en"></disclaimer>
-		<language>de</language>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-		<forum></forum>
-		<website>http://www.soundcloud.com/</website>
-		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.audio.bromix.soundcloud</source>
-	</extension>
-</addon>
-
-<addon id="plugin.video.bromix.youtube" name="YouTube (alpha 18)" version="1.0.0~alpha18" provider-name="bromix">
+<addon id="plugin.video.7tv" name="7TV" version="2.1.0" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -56,18 +8,18 @@
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Watch videos on YouTube</summary>
-		<summary lang="de">Schaue Dir Videos auf YouTube an</summary>
-		<description lang="en">YouTube is a one of the biggest video-sharing websites of the world.</description>
-		<description lang="de">YouTube ist ein eines der größten Video-Sharing-Websites der Welt.</description>
+		<summary lang="en">ProSieben, Sat.1, Kabel 1 and Sixx media library</summary>
+		<summary lang="de">Mediathek für ProSieben, Sat.1, Kabel 1 and Sixx</summary>
+		<description lang="en">Experience with 7TV a majority of shipments of ProSieben, SAT.1, kabel eins and sixx directly after the TV broadcast for free and for at least 7 days in full length - and the round-the-clock!</description>
+		<description lang="de">Erleben Sie mit 7TV einen Großteil der Sendungen von ProSieben, SAT.1, kabel eins und sixx direkt nach der TV-Ausstrahlung kostenlos und für mindestens 7 Tage in voller Länge – und das rund um die Uhr!</description>
 		<disclaimer lang="en"></disclaimer>
 		<language>de</language>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-		<forum></forum>
-		<website>http://www.youtube.com/</website>
+		<forum>http://forum.xbmc.org/showthread.php?tid=198550</forum>
+		<website>www.7tv.de</website>
 		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.bromix.youtube</source>
+		<source>https://github.com/bromix/plugin.video.7tv</source>
 	</extension>
 </addon>
 
@@ -91,6 +43,124 @@
 		<website>http://www.break.com/</website>
 		<email>bromix at gmx dot net</email>
 		<source>https://github.com/bromix/plugin.picture.bromix.break</source>
+	</extension>
+</addon>
+
+<addon id="plugin.video.bromix.tlc_de" name="TLC.de" version="1.0.4" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">TLC.de media library</summary>
+		<summary lang="de">Mediathek für TLC.de</summary>
+		<description lang="en">TLC.de you'll find a wide range of series such as Cake Boss, Breaking Amish or Honey Boo Boo.</description>
+		<description lang="de">Unter TLC.de findest du ein großes Angebot von Serien wie Cake Boss, Breaking Amish oder Honey Boo Boo.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum>http://forum.xbmc.org/showthread.php?tid=198780</forum>
+		<website>www.tlc.de</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.video.bromix.tlc_de</source>
+	</extension>
+</addon>
+
+<addon id="plugin.video.bromix.dmax_de" name="DMAX.de" version="1.0.4" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">DMAX.de media library</summary>
+		<summary lang="de">Mediathek für DMAX.de</summary>
+		<description lang="en">DMAX.de you'll find a wide range of series such as BEAR GRYLLS, AUCTION HUNTERS, DER GEFÄHRLICHSTE JOB ALASKAS, GOLDRAUSCH IN ALASKA on FAST'N'LOUD, FREESTYLE FISHING, OFFROAD SURVIVORS, MOONSHINERS, DIE GEBRAUCHTWAGEN-PROFIS to the MYTHBUSTERS.</description>
+		<description lang="de">Unter DMAX.de findest du ein großes Angebot von Serien wie BEAR GRYLLS, AUCTION HUNTERS, DER GEFÄHRLICHSTE JOB ALASKAS, GOLDRAUSCH IN ALASKA über FAST’N’LOUD, FREESTYLE-FISCHEN, OFFROAD SURVIVORS, MOONSHINERS, DIE GEBRAUCHTWAGEN-PROFIS bis hin zu den MYTHBUSTERS.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum>http://forum.xbmc.org/showthread.php?tid=198780</forum>
+		<website>www.dmax.de</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.video.bromix.dmax_de</source>
+	</extension>
+</addon>
+
+<addon id="plugin.video.9gagtv" name="9GAG.TV" version="1.0.0" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.requests" version="2.3.0"/>
+        <import addon="plugin.video.youtube" version="4.4.10" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Videos worth watching.</summary>
+		<summary lang="de">Sehenswerte Videos.</summary>
+		<description lang="en">Videos worth watching. Best videos on the web. Updated daily.</description>
+		<description lang="de">Sehenswerte Videos. Die besten Videos im Internet. Täglich aktualisiert.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum></forum>
+		<website>http://www.9gag.tv/</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.video.9gagtv</source>
+	</extension>
+</addon>
+
+<addon id="plugin.audio.soundcloud" name="SoundCloud" version="1.0.0" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.requests" version="2.3.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>audio</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">SoundCloud is an online audio distribution platform.</summary>
+		<summary lang="de">Soundcloud ist ein Online-Audio-Vertriebsplattform.</summary>
+		<description lang="en">SoundCloud is an online audio distribution platform that enables its users to upload, record, promote and share their originally-created sounds.</description>
+		<description lang="de">Soundcloud ist ein Online-Audio-Vertriebsplattform. Benutzer können ihre ursprünglich erstelle Music hochladen, aufnehmen und unter weiteren Benutzern teilen.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum></forum>
+		<website>http://www.soundcloud.com/</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.audio.soundcloud</source>
+	</extension>
+</addon>
+
+<addon id="plugin.video.bromix.youtube" name="YouTube (alpha 18)" version="1.0.0~alpha18" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Watch videos on YouTube</summary>
+		<summary lang="de">Schaue Dir Videos auf YouTube an</summary>
+		<description lang="en">YouTube is a one of the biggest video-sharing websites of the world.</description>
+		<description lang="de">YouTube ist ein eines der größten Video-Sharing-Websites der Welt.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum></forum>
+		<website>http://www.youtube.com/</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.video.bromix.youtube</source>
 	</extension>
 </addon>
 
@@ -138,52 +208,6 @@
 		<website>http://www.netzkino.de/</website>
 		<email>bromix at gmx dot net</email>
 		<source>https://github.com/bromix/plugin.video.bromix.netzkino_de</source>
-	</extension>
-</addon>
-
-<addon id="plugin.video.bromix.tlc_de" name="TLC.de" version="1.0.4" provider-name="bromix">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">TLC.de media library</summary>
-		<summary lang="de">Mediathek für TLC.de</summary>
-		<description lang="en">TLC.de you'll find a wide range of series such as Cake Boss, Breaking Amish or Honey Boo Boo.</description>
-		<description lang="de">Unter TLC.de findest du ein großes Angebot von Serien wie Cake Boss, Breaking Amish oder Honey Boo Boo.</description>
-		<disclaimer lang="en"></disclaimer>
-		<language>de</language>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-		<forum>http://forum.xbmc.org/showthread.php?tid=198780</forum>
-		<website>www.tlc.de</website>
-		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.bromix.tlc_de</source>
-	</extension>
-</addon>
-
-<addon id="plugin.video.bromix.dmax_de" name="DMAX.de" version="1.0.4" provider-name="bromix">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">DMAX.de media library</summary>
-		<summary lang="de">Mediathek für DMAX.de</summary>
-		<description lang="en">DMAX.de you'll find a wide range of series such as BEAR GRYLLS, AUCTION HUNTERS, DER GEFÄHRLICHSTE JOB ALASKAS, GOLDRAUSCH IN ALASKA on FAST'N'LOUD, FREESTYLE FISHING, OFFROAD SURVIVORS, MOONSHINERS, DIE GEBRAUCHTWAGEN-PROFIS to the MYTHBUSTERS.</description>
-		<description lang="de">Unter DMAX.de findest du ein großes Angebot von Serien wie BEAR GRYLLS, AUCTION HUNTERS, DER GEFÄHRLICHSTE JOB ALASKAS, GOLDRAUSCH IN ALASKA über FAST’N’LOUD, FREESTYLE-FISCHEN, OFFROAD SURVIVORS, MOONSHINERS, DIE GEBRAUCHTWAGEN-PROFIS bis hin zu den MYTHBUSTERS.</description>
-		<disclaimer lang="en"></disclaimer>
-		<language>de</language>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-		<forum>http://forum.xbmc.org/showthread.php?tid=198780</forum>
-		<website>www.dmax.de</website>
-		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.bromix.dmax_de</source>
 	</extension>
 </addon>
 
@@ -253,29 +277,6 @@
 		<website>http://www.voxnow.de/</website>
 		<email>bromix at gmx dot net</email>
 		<source>https://github.com/bromix/plugin.video.bromix.vox_now</source>
-	</extension>
-</addon>
-
-<addon id="plugin.video.7tv" name="7TV" version="2.1.0" provider-name="bromix">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">ProSieben, Sat.1, Kabel 1 and Sixx media library</summary>
-		<summary lang="de">Mediathek für ProSieben, Sat.1, Kabel 1 and Sixx</summary>
-		<description lang="en">Experience with 7TV a majority of shipments of ProSieben, SAT.1, kabel eins and sixx directly after the TV broadcast for free and for at least 7 days in full length - and the round-the-clock!</description>
-		<description lang="de">Erleben Sie mit 7TV einen Großteil der Sendungen von ProSieben, SAT.1, kabel eins und sixx direkt nach der TV-Ausstrahlung kostenlos und für mindestens 7 Tage in voller Länge – und das rund um die Uhr!</description>
-		<disclaimer lang="en"></disclaimer>
-		<language>de</language>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-		<forum>http://forum.xbmc.org/showthread.php?tid=198550</forum>
-		<website>www.7tv.de</website>
-		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.7tv</source>
 	</extension>
 </addon>
 

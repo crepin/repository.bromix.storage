@@ -1,3 +1,8 @@
+1.0.0 (2014-10-29)
+ADD: additional debug log in debug-mode
+DEL: unused settings
+UPD: Kodimon
+
 1.0.0~beta3 (2014-10-28)
 UPD: using AccessManager of Kodimon for managing the access_token
 
