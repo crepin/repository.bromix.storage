@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+<addon id="plugin.video.9gagtv" name="9GAG.TV" version="1.0.0" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.requests" version="2.3.0"/>
+        <import addon="plugin.video.youtube" version="4.4.10" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Videos worth watching.</summary>
+		<summary lang="de">Sehenswerte Videos.</summary>
+		<description lang="en">Videos worth watching. Best videos on the web. Updated daily.</description>
+		<description lang="de">Sehenswerte Videos. Die besten Videos im Internet. Täglich aktualisiert.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum></forum>
+		<website>http://www.9gag.tv/</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.video.9gagtv</source>
+	</extension>
+</addon>
+
+<addon id="plugin.audio.soundcloud" name="SoundCloud" version="1.0.0" provider-name="bromix">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.requests" version="2.3.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>audio</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">SoundCloud is an online audio distribution platform.</summary>
+		<summary lang="de">Soundcloud ist ein Online-Audio-Vertriebsplattform.</summary>
+		<description lang="en">SoundCloud is an online audio distribution platform that enables its users to upload, record, promote and share their originally-created sounds.</description>
+		<description lang="de">Soundcloud ist ein Online-Audio-Vertriebsplattform. Benutzer können ihre ursprünglich erstelle Music hochladen, aufnehmen und unter weiteren Benutzern teilen.</description>
+		<disclaimer lang="en"></disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum></forum>
+		<website>http://www.soundcloud.com/</website>
+		<email>bromix at gmx dot net</email>
+		<source>https://github.com/bromix/plugin.audio.soundcloud</source>
+	</extension>
+</addon>
+
 <addon id="plugin.video.7tv" name="7TV" version="2.1.0" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
@@ -92,52 +141,26 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.9gagtv" name="9GAG.TV" version="1.0.0" provider-name="bromix">
+<addon id="plugin.video.bromix.myvideo_de" name="MyVideo.de" version="1.0.0~alpha" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.module.requests" version="2.3.0"/>
-        <import addon="plugin.video.youtube" version="4.4.10" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Videos worth watching.</summary>
-		<summary lang="de">Sehenswerte Videos.</summary>
-		<description lang="en">Videos worth watching. Best videos on the web. Updated daily.</description>
-		<description lang="de">Sehenswerte Videos. Die besten Videos im Internet. Täglich aktualisiert.</description>
+		<summary lang="en">Netzkino.de movies</summary>
+		<summary lang="de">Filme von Netzkino.de</summary>
+		<description lang="en">With Netzkino.de you can watch movies free and legal.</description>
+		<description lang="de">Mit Netzkino.de kannst du kostenlos und legal Spielfilme schauen.</description>
 		<disclaimer lang="en"></disclaimer>
 		<language>de</language>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
 		<forum></forum>
-		<website>http://www.9gag.tv/</website>
+		<website>http://www.myvideo.de/</website>
 		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.9gagtv</source>
-	</extension>
-</addon>
-
-<addon id="plugin.audio.soundcloud" name="SoundCloud" version="1.0.0" provider-name="bromix">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.module.requests" version="2.3.0"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>audio</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">SoundCloud is an online audio distribution platform.</summary>
-		<summary lang="de">Soundcloud ist ein Online-Audio-Vertriebsplattform.</summary>
-		<description lang="en">SoundCloud is an online audio distribution platform that enables its users to upload, record, promote and share their originally-created sounds.</description>
-		<description lang="de">Soundcloud ist ein Online-Audio-Vertriebsplattform. Benutzer können ihre ursprünglich erstelle Music hochladen, aufnehmen und unter weiteren Benutzern teilen.</description>
-		<disclaimer lang="en"></disclaimer>
-		<language>de</language>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-		<forum></forum>
-		<website>http://www.soundcloud.com/</website>
-		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.audio.soundcloud</source>
+		<source>https://github.com/bromix/plugin.video.bromix.myvideo_de</source>
 	</extension>
 </addon>
 

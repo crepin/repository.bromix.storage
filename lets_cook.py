@@ -1,16 +1,15 @@
 root_url = 'https://github.com/bromix/'
 
 # official repository
-resources = [{'name': 'plugin.video.7tv', 'branch': 'master'},
+resources = [{'name': 'plugin.video.9gagtv', 'branch': 'master'},
+             {'name': 'plugin.audio.soundcloud', 'branch': 'master'},
+             {'name': 'plugin.video.7tv', 'branch': 'master'},
              {'name': 'plugin.picture.bromix.break', 'branch': 'master'},
              {'name': 'plugin.video.bromix.tlc_de', 'branch': 'master'},
              {'name': 'plugin.video.bromix.dmax_de', 'branch': 'master'},
 
-             # pending
-             {'name': 'plugin.video.9gagtv', 'branch': 'master'},
-             {'name': 'plugin.audio.soundcloud', 'branch': 'master'},
-
              # bromix repository
+             {'name': 'plugin.video.bromix.myvideo_de', 'branch': 'master'},
              {'name': 'plugin.video.bromix.youtube', 'branch': 'master'},
              {'name': 'plugin.video.bromix.break', 'branch': 'master'},
              {'name': 'plugin.video.bromix.netzkino_de', 'branch': 'master'},
