@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.bromix.myvideo_de" name="MyVideo.de" version="1.0.0~alpha" provider-name="bromix">
+<addon id="plugin.video.bromix.myvideo_de" name="MyVideo.de" version="1.0.0~alpha1" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.requests" version="2.3.0"/>
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Netzkino.de movies</summary>
-		<summary lang="de">Filme von Netzkino.de</summary>
-		<description lang="en">With Netzkino.de you can watch movies free and legal.</description>
-		<description lang="de">Mit Netzkino.de kannst du kostenlos und legal Spielfilme schauen.</description>
+		<summary lang="en">Free television with MyVideo.de: Music, Shows and Movies</summary>
+		<summary lang="de">Gratis fernsehen mit MyVideo.de: Musik, Serien und Filme</summary>
+		<description lang="en">Free television with MyVideo.de: music, tv shows and movies. The best series, shows, music videos, movies, anime series, TV shows and gaming live streams for free. The most popular TV highlights of ProSieben, Sat.1, kabel eins and Sixx free and legal.</description>
+		<description lang="de">Gratis fernsehen mit MyVideo.de: Musik, Serien und Filme. Die besten Serien, Shows, Musik-Videos, Filme, Anime-Serien, TV-Sendungen und Gaming-live-Streams kostenlos. Die beliebtesten TV-Highlights von ProSieben, Sat.1, kabeleins und Sixx gratis und legal.</description>
 		<disclaimer lang="en"></disclaimer>
 		<language>de</language>
 		<platform>all</platform>
