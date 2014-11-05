@@ -1,0 +1,10 @@
+1.0.0 (2014-11-05)
+UPD: removed alpha status
+ADD: support for 'Watch Later'
+ADD: support for 'Addon Favs'
+
+1.0.0~alpha1 (2014-11-05)
+ADD: missing 'requests' import
+
+1.0.0~alpha (2014-11-04)
+ADD: initial version for tests
