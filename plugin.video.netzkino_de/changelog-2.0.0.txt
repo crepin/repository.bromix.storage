@@ -1,3 +1,6 @@
+2.0.0~beta4 (2014-11-09)
+UPD: changed ID and moved to stable
+
 2.0.0~beta4 (2014-11-08)
 UPD: kodimon
 
