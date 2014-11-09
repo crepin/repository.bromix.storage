@@ -1,3 +1,6 @@
+2.0.0~beta4 (2014-11-08)
+UPD: kodimon
+
 2.0.0~beta3 (2014-10-23)
 UPD: testing sqlite for caching, watch later and search
 
