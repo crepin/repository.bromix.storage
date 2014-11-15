@@ -1,3 +1,7 @@
+2.0.0~beta4 (2014-11-14)
+UPD: fanart for next page item
+UPD: kodion tests
+
 2.0.0~beta3 (2014-11-09)
 UPD: second fanart
 

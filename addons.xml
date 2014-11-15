@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.video.9gagtv" name="9GAG.TV" version="1.0.0" provider-name="bromix">
+<addon id="plugin.video.9gagtv" name="9GAG.TV" version="1.0.1~beta" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.requests" version="2.3.0"/>
@@ -25,7 +25,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.audio.soundcloud" name="SoundCloud" version="1.0.0" provider-name="bromix">
+<addon id="plugin.audio.soundcloud" name="SoundCloud" version="1.0.1~beta" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.requests" version="2.3.0"/>
@@ -49,7 +49,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.7tv" name="7TV" version="2.1.0" provider-name="bromix">
+<addon id="plugin.video.7tv" name="7TV" version="2.1.1~beta" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -72,7 +72,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.picture.bromix.break" name="Break Pictures" version="2.0.0" provider-name="bromix">
+<addon id="plugin.picture.bromix.break" name="Break Pictures" version="2.0.1~beta" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.requests" version="2.3.0"/>
@@ -142,7 +142,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.netzkino_de" name="Netzkino.de" version="2.0.1" provider-name="bromix">
+<addon id="plugin.video.netzkino_de" name="Netzkino.de" version="2.0.2~beta" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -212,7 +212,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.bromix.break" name="Break Videos" version="2.0.0~beta3" provider-name="bromix">
+<addon id="plugin.video.bromix.break" name="Break Videos" version="2.0.0~beta4" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.requests" version="2.3.0"/>

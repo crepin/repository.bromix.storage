@@ -1,3 +1,6 @@
+2.0.2~beta (2014-11-15)
+UPD: kodion tests
+
 2.0.1 (2014-11-12)
 FIX: import xbmc.python 2.1.0
 
