@@ -1,3 +1,6 @@
+2.0.2~beta (2014-11-21)
+UPD: improved performance
+
 2.0.1 (2014-11-14)
 FIX: show fanart for next page items
 UPD: kodion tests
