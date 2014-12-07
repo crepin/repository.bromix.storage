@@ -10,8 +10,8 @@ resources = [{'name': 'plugin.video.9gagtv', 'branch': 'master'},
              {'name': 'plugin.video.netzkino_de', 'branch': 'master'},
 
              # bromix repository
+             {'name': 'plugin.video.bromix.youtube', 'branch': 'alpha28'},
              {'name': 'plugin.video.bromix.myvideo_de', 'branch': 'master'},
-             #{'name': 'plugin.video.bromix.youtube', 'branch': 'alpha27'},
              {'name': 'plugin.video.bromix.break', 'branch': 'master'},
              {'name': 'plugin.video.bromix.rtl_now', 'branch': 'master'},
              {'name': 'plugin.video.bromix.rtl2_now', 'branch': 'master'},
