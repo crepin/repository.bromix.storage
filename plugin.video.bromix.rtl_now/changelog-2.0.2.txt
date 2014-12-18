@@ -1,4 +1,4 @@
-2.0.1 (2014-12-18)
+2.0.2 (2014-12-18)
 ADD: Watch Later
 ADD: search + history
 ADD: caching
