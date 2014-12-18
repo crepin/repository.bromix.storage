@@ -1,3 +1,10 @@
+2.0.0 (2014-12-18)
+ADD: Watch Later
+ADD: search + history
+ADD: caching
+FIX: playing HDS streams
+UPD: moved to kodion framework
+
 1.0.3 (2014-08-31)
 - DEL: Live-Stream
 
