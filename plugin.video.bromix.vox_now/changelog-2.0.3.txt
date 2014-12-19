@@ -1,3 +1,6 @@
+2.0.3 (2014-12-19)
+UPD: improved performance
+
 2.0.2 (2014-12-18)
 ADD: Watch Later
 ADD: search + history
