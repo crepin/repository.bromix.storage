@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:/bromix/plugin.video.bromix.youtube/commits/beta1</id>
+  <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commits/beta1"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/bromix/plugin.video.bromix.youtube/commits/beta1.atom"/>
+  <title>Recent Commits to plugin.video.bromix.youtube:beta1</title>
+  <updated>2014-12-16T19:55:37+01:00</updated>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/35d47c41957063904067cdd7186510b428ebb9cf</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/35d47c41957063904067cdd7186510b428ebb9cf"/>
+    <title>
+        FIX: added localization for &#39;create new playlist&#39; (again)
+    </title>
+    <updated>2014-12-16T19:55:37+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>FIX: added localization for &#39;create new playlist&#39; (again)&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/9724acbb31b90138a06741f78432b2c46471d52a</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/9724acbb31b90138a06741f78432b2c46471d52a"/>
+    <title>
+        clean up on strings.xml
+    </title>
+    <updated>2014-12-16T19:28:41+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>clean up on strings.xml&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/6f0f4c4a8cf54e9be89503029735a04807952f79</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/6f0f4c4a8cf54e9be89503029735a04807952f79"/>
+    <title>
+        fixes #73
+    </title>
+    <updated>2014-12-16T19:23:49+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>fixes #73&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/214b44193c7352f28242d5cfc060d9b154091c92</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/214b44193c7352f28242d5cfc060d9b154091c92"/>
+    <title>
+        resolves #81
+    </title>
+    <updated>2014-12-14T16:40:25+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>resolves #81&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/da4ea54b8bdea5a2673aa62a7e2a0f0896dd0af8</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/da4ea54b8bdea5a2673aa62a7e2a0f0896dd0af8"/>
+    <title>
+        UPD: version bump
+    </title>
+    <updated>2014-12-14T12:39:54+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>UPD: version bump&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/fe50ba25678e0820deb092693ef7fe10b3c7cb15</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/fe50ba25678e0820deb092693ef7fe10b3c7cb15"/>
+    <title>
+        UPD: fixes #68
+    </title>
+    <updated>2014-12-14T01:21:54+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>UPD: fixes #68&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/41af3224a8fd3c23ee591a5a891ab2857bc7368f</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/41af3224a8fd3c23ee591a5a891ab2857bc7368f"/>
+    <title>
+        ADD: add to playlist
+    </title>
+    <updated>2014-12-14T00:52:18+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>ADD: add to playlist&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/dc2014d52efb9057c5a1e4a487424252437d575c</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/dc2014d52efb9057c5a1e4a487424252437d575c"/>
+    <title>
+        UPD: merge fix
+    </title>
+    <updated>2014-12-13T23:55:10+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>UPD: merge fix&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/90ae5bfdcdc1affd21bb78b91d138636ed361308</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/90ae5bfdcdc1affd21bb78b91d138636ed361308"/>
+    <title>
+        UPD: merge fix
+    </title>
+    <updated>2014-12-13T23:53:16+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>UPD: merge fix&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/851b37d907e7e70d1d21ca0574f3883f93238e16</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/851b37d907e7e70d1d21ca0574f3883f93238e16"/>
+    <title>
+        UPD: merge fix
+    </title>
+    <updated>2014-12-13T23:37:44+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>UPD: merge fix&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/1488b701ce9b8d63c1ea5352d720b32c85f2b3a1</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/1488b701ce9b8d63c1ea5352d720b32c85f2b3a1"/>
+    <title>
+        FIX: localization update
+    </title>
+    <updated>2014-12-13T23:37:02+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>FIX: localization update&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/b039a0ad176c7b9abf2929a9d441aee45859e03a</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/b039a0ad176c7b9abf2929a9d441aee45859e03a"/>
+    <title>
+        UPD: code cleaning
+    </title>
+    <updated>2014-12-13T23:34:27+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>UPD: code cleaning&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/bb9025ad5b33a2370c2da73e1d3e67030b71e562</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/bb9025ad5b33a2370c2da73e1d3e67030b71e562"/>
+    <title>
+        Merge branch &#39;add_to_playlist&#39; into alpha29
+    </title>
+    <updated>2014-12-13T23:33:18+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Merge branch &#39;add_to_playlist&#39; into alpha29
+
+Conflicts:
+	resources/lib/kodion/impl/xbmc/xbmc_context_ui.py&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/742ebde76afc80c767e20c2ddeeb222c1108c308</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/742ebde76afc80c767e20c2ddeeb222c1108c308"/>
+    <title>
+        UPD: code cleaning
+    </title>
+    <updated>2014-12-13T23:33:06+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>UPD: code cleaning&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/a7f2f2b22b385bb9492e00e52eeac332504a5326</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/a7f2f2b22b385bb9492e00e52eeac332504a5326"/>
+    <title>
+        UPD: code cleaning
+    </title>
+    <updated>2014-12-13T22:56:46+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>UPD: code cleaning&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/2a6ebabc4348c076d2875fe514cca33eb06b80ac</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/2a6ebabc4348c076d2875fe514cca33eb06b80ac"/>
+    <title>
+        Merge pull request #80 from bromix/cyrillic_letters
+    </title>
+    <updated>2014-12-13T22:49:30+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Merge pull request #80 from bromix/cyrillic_letters
+
+fixes #79&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/0e1af312307e7279d6d1ab7e4c13f195b2794d1b</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/0e1af312307e7279d6d1ab7e4c13f195b2794d1b"/>
+    <title>
+        FIX: cyrillic letters (#79)
+    </title>
+    <updated>2014-12-13T22:48:12+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>FIX: cyrillic letters (#79)&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/d8731a12f1943a11d02b7465c8ef9d67e00e6ae4</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/d8731a12f1943a11d02b7465c8ef9d67e00e6ae4"/>
+    <title>
+        Merge pull request #77 from roondar/master
+    </title>
+    <updated>2014-12-13T22:08:55+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Merge pull request #77 from roondar/master
+
+Add french translation&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/7180a509205b58ff7edef62b55ace0880463c6e1</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/7180a509205b58ff7edef62b55ace0880463c6e1"/>
+    <title>
+        Add french translation
+    </title>
+    <updated>2014-12-11T08:33:29+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars2.githubusercontent.com/u/634279?v=3&amp;s=30"/>
+    <author>
+      <name>roondar</name>
+      <uri>https://github.com/roondar</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Add french translation&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/d23241921fd49cda135e2c07c830215542a50002</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bromix/plugin.video.bromix.youtube/commit/d23241921fd49cda135e2c07c830215542a50002"/>
+    <title>
+        Merge pull request #76 from bromix/revert-75-delete_playlist
+    </title>
+    <updated>2014-12-09T20:39:07+01:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/4136891?v=3&amp;s=30"/>
+    <author>
+      <name>bromix</name>
+      <uri>https://github.com/bromix</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Merge pull request #76 from bromix/revert-75-delete_playlist
+
+Revert 75 delete playlist&lt;/pre>
+    </content>
+  </entry>
+</feed>
