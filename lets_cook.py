@@ -21,7 +21,6 @@ resources = [{'name': 'plugin.video.9gagtv', 'branch': 'master'},
 
              {'name': 'repository.bromix', 'branch': 'master'}]
 
-import urllib2
 import os
 import shutil
 import md5
@@ -82,123 +81,13 @@ def generateXml():
     pass
 
 
-def compress():
-    def _readAddon(xml_file_name):
-        xml = ET.parse(xml_file_name)
-        root = xml.getroot();
-        addon_id = root.get('id', None)
-        addon_version = root.get('version', None)
-        return {'id': addon_id,
-                'version': addon_version
-        }
-
-    def _zipFiles(source_path, target_file_name):
-        zip_file = zipfile.ZipFile(target_file_name, 'w', compression=zipfile.ZIP_DEFLATED)
-
-        # get length of characters of what we will use as the root path       
-        root_len = len(os.path.dirname(os.path.abspath(source_path)))
-
-        # recursive writer
-        for root, directories, files in os.walk(source_path):
-            # subtract the source file's root from the archive root - ie. make /Users/me/desktop/zipme.txt into just /zipme.txt 
-            archive_root = os.path.abspath(root)[root_len:]
-
-            for f in files:
-                fullpath = os.path.join(root, f)
-                archive_name = os.path.join(archive_root, f)
-                zip_file.write(fullpath, archive_name, zipfile.ZIP_DEFLATED)
-        zip_file.close()
-
-    print("Compressing resources...")
-    local_path = os.getcwd()
-    for resource in resources:
-        resource_path = os.path.join(local_path, '_dl_tmp', resource['name'])
-        target_path = os.path.join(local_path, resource['name'])
-
-        if os.path.exists(resource_path):
-            if not os.path.exists(target_path):
-                os.mkdir(target_path)
-
-            print("Processing '%s'" % resource['name'])
-            addon_xml_file_name = os.path.join(resource_path, 'addon.xml')
-            addon_info = _readAddon(addon_xml_file_name)
-
-            addon_zip_file_name = os.path.join(target_path, '%s-%s.zip' % (addon_info['id'], addon_info['version']))
-            if not os.path.exists(addon_zip_file_name):
-                _zipFiles(resource_path, addon_zip_file_name)
-            else:
-                print("Skipping '%s' (already exists)" % (addon_zip_file_name))
-
-            changelog_file_name = os.path.join(target_path, 'changelog-%s.txt' % (addon_info['version']))
-            files_to_copy = [{'From': os.path.join(resource_path, 'addon.xml'),
-                              'To': os.path.join(target_path, 'addon.xml')},
-
-                             {'From': os.path.join(resource_path, 'fanart.jpg'),
-                              'To': os.path.join(target_path, 'fanart.jpg')},
-
-                             {'From': os.path.join(resource_path, 'icon.png'),
-                              'To': os.path.join(target_path, 'icon.png')},
-
-                             {'From': os.path.join(resource_path, 'changelog.txt'),
-                              'To': changelog_file_name}
-            ]
-
-            for file_to_copy in files_to_copy:
-                if os.path.exists(file_to_copy['To']):
-                    os.remove(file_to_copy['To'])
-
-                if os.path.exists(file_to_copy['From']):
-                    shutil.copy(file_to_copy['From'], file_to_copy['To'])
-                pass
-        else:
-            print("Skipping '%s' (path not found)" % resource['name'])
-        pass
-    pass
-
-
-def downloadAndExtract():
-    for resource in resources:
-        download_url = '%s%s/archive/%s.zip' % (root_url, resource['name'], resource['branch'])
-        zip_file_name = '%s-%s.zip' % (resource['name'], resource['branch'])
-        zip_file_name = os.path.join(local_path, zip_file_name)
-
-        print("Downloading '%s' from '%s'" % ( resource['name'], download_url ))
-        if os.path.exists(zip_file_name):
-            os.remove(zip_file_name)
-        download_file = open(zip_file_name, 'wb')
-        req = urllib2.urlopen(download_url)
-        download_file.write(req.read())
-        download_file.close()
-        download_file = open(zip_file_name, 'rb')
-        zip_file = zipfile.ZipFile(download_file)
-
-        old_folder_name = '%s-%s' % (resource['name'], resource['branch'])
-        new_folder_name = '%s' % (resource['name'])
-
-        print("Extracting '%s'" % (zip_file_name))
-        for name in zip_file.namelist():
-            correct_path = os.path.join(local_path, name)
-            correct_path = correct_path.replace(old_folder_name, new_folder_name)
-            if correct_path.endswith('/'):
-                if not os.path.exists(correct_path):
-                    os.mkdir(correct_path)
-            else:
-                tmp_file = open(correct_path, 'wb')
-                tmp_file.write(zip_file.read(name))
-                tmp_file.close()
-            pass
-
-        zip_file.close()
-        download_file.close()
-        os.remove(zip_file_name)
-    print("Done downloading")
-
-
 import requests
+
 try:
     import xml.etree.cElementTree as ET
 except ImportError:
     import xml.etree.ElementTree as ET
+
     pass
 
 
@@ -243,47 +132,167 @@ class Updater(object):
         user_name = self._get_user_name_from_addon(addon)
         return '%s/%s [%s]' % (user_name, addon['name'], addon['branch'])
 
-    def _create_addon_batch_list(self):
+    def _process_addons(self):
         result = []
 
         for addon in self._json_data['addons']:
             display_name = self._make_addon_display_name(addon)
-
-            local_updated = addon.get('updated', '')
-            if not local_updated:
-                print 'Adding "%s" (no update)' % display_name
-                result.append(addon)
-                continue
-
+            print '================================================================================'
             print 'Checking "%s"...' % display_name
-            xml = self._download_atom_feed(addon)
-            feed = xml.getroot()
-            remote_updated = feed.find('{http://www.w3.org/2005/Atom}updated').text
-            if remote_updated != local_updated:
-                print 'Adding "%s" (updated)' % display_name
-                result.append(addon)
+
+            try:
+                xml = self._download_atom_feed(addon)
+                feed = xml.getroot()
+                local_updated = addon.get('updated', '')
+                remote_updated = feed.find('{http://www.w3.org/2005/Atom}updated').text
+                if remote_updated != local_updated:
+                    print 'Adding "%s" (updated)' % display_name
+                    zip_filename = self._download_addon(addon)
+                    source_folder = self._extract_addon(addon, zip_filename)
+                    self._create_repo_addon(addon, source_folder)
+                    pass
+                else:
+                    print 'Up to date "%s"' % display_name
+                    pass
+                pass
+            except Exception, ex:
+                print 'Failed "%s" (%s)' % (display_name, ex.__str__())
                 pass
             pass
-
-        return result
-
-    def _process_addon_list(self, addon_list):
-        for addon in addon_list:
-            display_name = self._make_addon_display_name(addon)
-
-            pass
         pass
+
+    def _download_addon(self, addon):
+        display_name = self._make_addon_display_name(addon)
+        print 'Downloading "%s"...' % display_name
+
+        username = self._get_user_name_from_addon(addon)
+        git_url = self._json_data['global']['git']
+        download_url = '%s%s/%s/archive/%s.zip' % (git_url, username, addon['name'], addon['branch'])
+        zip_filename = '%s-%s.zip' % (addon['name'], addon['branch'])
+        zip_filename = os.path.join(self._download_tmp, zip_filename)
+        if os.path.exists(zip_filename):
+            os.remove(zip_filename)
+            pass
+        with open(zip_filename, 'wb') as handle:
+            response = requests.get(download_url, stream=True)
+
+            for block in response.iter_content(1024):
+                if not block:
+                    break
+
+                handle.write(block)
+                pass
+            pass
+        return zip_filename
+
+    def _extract_addon(self, addon, zip_filename):
+        display_name = self._make_addon_display_name(addon)
+        print 'Extracting "%s"' % display_name
+
+        zip_file = zipfile.ZipFile(open(zip_filename, 'rb'))
+        old_folder_name = '%s-%s' % (addon['name'], addon['branch'])
+        new_folder_name = '%s' % (addon['name'])
+
+        ignore_list = self._json_data['global']['ignore']
+        for name in zip_file.namelist():
+            last_component = name.split('/')
+            last_component = last_component[len(last_component)-1]
+
+            # skip ignored files
+            if last_component in ignore_list:
+                continue
+            correct_path = os.path.join(self._download_tmp, name)
+            correct_path = correct_path.replace(old_folder_name, new_folder_name)
+            if correct_path.endswith('/'):
+                if not os.path.exists(correct_path):
+                    os.mkdir(correct_path)
+            else:
+                tmp_file = open(correct_path, 'wb')
+                tmp_file.write(zip_file.read(name))
+                tmp_file.close()
+            pass
+
+        zip_file.close()
+        os.remove(zip_filename)
+        return os.path.join(self._download_tmp, addon['name'])
 
     def execute(self):
         print('Preparing...')
         self._create_download_temp()
 
-        addon_list = self._create_addon_batch_list()
-        self._process_addon_list(addon_list)
+        self._process_addons()
 
         self._remove_download_temp()
         print('Update finished')
         return self._json_data
+
+    def _create_repo_addon(self, addon, source_folder):
+        def _read_addon_data(addon_xml_filename):
+            xml = ET.parse(addon_xml_filename)
+            root = xml.getroot();
+            addon_id = root.get('id', None)
+            addon_version = root.get('version', None)
+            return {'id': addon_id, 'version': addon_version}
+
+        def _zip_files(source_path, zip_filename):
+            zip_file = zipfile.ZipFile(zip_filename, 'w', compression=zipfile.ZIP_DEFLATED)
+
+            # get length of characters of what we will use as the root path
+            root_len = len(os.path.dirname(os.path.abspath(source_path)))
+
+            # recursive writer
+            for root, directories, files in os.walk(source_path):
+                # subtract the source file's root from the archive root - ie. make /Users/me/desktop/zipme.txt into just /zipme.txt
+                archive_root = os.path.abspath(root)[root_len:]
+
+                for f in files:
+                    full_path = os.path.join(root, f)
+                    archive_name = os.path.join(archive_root, f)
+                    zip_file.write(full_path, archive_name, zipfile.ZIP_DEFLATED)
+                    pass
+                pass
+            zip_file.close()
+            pass
+
+        def _copy_files(source_folder, target_folder, addon_version):
+            files = ['addon.xml', 'changelog.txt', 'fanart.jpg', 'icon.png']
+            for filename in files:
+                needed = True
+                if filename == 'fanart.jpg':
+                    needed = False
+                    pass
+
+                source_filename = os.path.join(source_folder, filename)
+                if filename == 'changelog.txt':
+                    filename = 'changlelog-%s.txt' % addon_version
+                    pass
+                target_filename = os.path.join(target_folder, filename)
+
+                if os.path.exists(target_filename):
+                    os.remove(target_filename)
+                    pass
+                if needed or os.path.exists(source_filename):
+                    shutil.copy(source_filename, target_filename)
+                    pass
+                pass
+            pass
+
+        display_name = self._make_addon_display_name(addon)
+        print 'Update repo addon "%s"' % display_name
+        target_folder = os.path.join(self._working_path, addon['name'])
+        if os.path.exists(target_folder):
+            shutil.rmtree(target_folder)
+            pass
+        if not os.path.exists(target_folder):
+            os.mkdir(target_folder)
+            pass
+
+        addon_xml_filename = os.path.join(source_folder, 'addon.xml')
+        addon_data = _read_addon_data(addon_xml_filename)
+        zip_filename = os.path.join(target_folder, '%s-%s.zip' % (addon_data['id'], addon_data['version']))
+        _zip_files(source_folder, zip_filename)
+        _copy_files(source_folder, target_folder, addon_data['version'])
+        pass
 
 
 if __name__ == "__main__":
@@ -296,8 +305,10 @@ if __name__ == "__main__":
     updater = Updater(working_path, json_data)
     json_data = updater.execute()
 
+    with open(json_filename, 'w') as json_file:
+        json.dump(json_data, json_file, sort_keys=True, indent=4, encoding='utf-8')
+        pass
     """
-    downloadAndExtract()
     compress()
     generateXml()
     cleanUp()

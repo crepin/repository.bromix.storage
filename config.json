@@ -1,24 +1,67 @@
 {
-    "global": {
-        "git": "https://github.com/",
-        "user": "bromix"
-    },
     "addons": [
-        {"name": "plugin.video.9gagtv","branch": "master"},
-        {"name": "plugin.audio.soundcloud", "branch": "master"},
-        {"name": "plugin.video.7tv", "branch": "master"},
-        {"name": "plugin.picture.bromix.break", "branch": "master"},
-        {"name": "plugin.video.bromix.tlc_de", "branch": "master"},
-        {"name": "plugin.video.bromix.dmax_de", "branch": "master"},
-        {"name": "plugin.video.netzkino_de", "branch": "master"},
-
-        {"name": "plugin.video.bromix.youtube", "branch": "alpha29"},
-        {"name": "plugin.video.bromix.myvideo_de", "branch": "master"},
-        {"name": "plugin.video.bromix.break", "branch": "master"},
-        {"name": "plugin.video.bromix.rtl_now", "branch": "master"},
-        {"name": "plugin.video.bromix.rtl2_now", "branch": "master"},
-        {"name": "plugin.video.bromix.vox_now", "branch": "master"},
-
-        {"name": "repository.bromix", "branch": "master"}
-    ]
+        {
+            "branch": "master", 
+            "name": "plugin.video.9gagtv"
+        }, 
+        {
+            "branch": "master", 
+            "name": "plugin.audio.soundcloud"
+        }, 
+        {
+            "branch": "master", 
+            "name": "plugin.video.7tv"
+        }, 
+        {
+            "branch": "master", 
+            "name": "plugin.picture.bromix.break"
+        }, 
+        {
+            "branch": "master", 
+            "name": "plugin.video.bromix.tlc_de"
+        }, 
+        {
+            "branch": "master", 
+            "name": "plugin.video.bromix.dmax_de"
+        }, 
+        {
+            "branch": "master", 
+            "name": "plugin.video.netzkino_de"
+        }, 
+        {
+            "branch": "alpha29", 
+            "name": "plugin.video.bromix.youtube"
+        }, 
+        {
+            "branch": "master", 
+            "name": "plugin.video.bromix.myvideo_de"
+        }, 
+        {
+            "branch": "master", 
+            "name": "plugin.video.bromix.break"
+        }, 
+        {
+            "branch": "master", 
+            "name": "plugin.video.bromix.rtl_now"
+        }, 
+        {
+            "branch": "master", 
+            "name": "plugin.video.bromix.rtl2_now"
+        }, 
+        {
+            "branch": "master", 
+            "name": "plugin.video.bromix.vox_now"
+        }, 
+        {
+            "branch": "master", 
+            "name": "repository.bromix"
+        }
+    ], 
+    "global": {
+        "git": "https://github.com/", 
+        "ignore": [
+            ".gitignore"
+        ], 
+        "user": "bromix"
+    }
 }
