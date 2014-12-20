@@ -23,7 +23,8 @@
             "branch": "master", 
             "name": "plugin.picture.bromix.break", 
             "platform": "frodo", 
-            "updated": "2014-11-27T20:07:02+01:00"
+            "updated": "2014-11-27T20:07:02+01:00", 
+            "version": "2.0.2"
         }, 
         {
             "branch": "master", 
@@ -48,7 +49,8 @@
             "branch": "alpha29", 
             "name": "plugin.video.bromix.youtube", 
             "platform": "bromix", 
-            "updated": "2014-12-14T12:39:54+01:00"
+            "updated": "2014-12-14T12:39:54+01:00", 
+            "version": "1.0.0~alpha29"
         }, 
         {
             "branch": "master", 

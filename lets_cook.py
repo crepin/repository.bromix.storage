@@ -197,12 +197,8 @@ class Updater(object):
         print('Preparing...')
         self._create_download_temp()
 
-        if self._process_addons():
-            self._generate_addons_xml_and_md5()
-            pass
-        else:
-            print 'Nothing to update'
-            pass
+        self._process_addons()
+        self._generate_addons_xml_and_md5()
 
         self._remove_download_temp()
         print('Update finished')
@@ -261,7 +257,11 @@ class Updater(object):
 
         display_name = self._make_addon_display_name(addon)
         print 'Update repo addon "%s"' % display_name
-        target_folder = os.path.join(self._working_path, addon['name'])
+
+        addon_xml_filename = os.path.join(source_folder, 'addon.xml')
+        addon_data = _read_addon_data(addon_xml_filename)
+
+        target_folder = os.path.join(self._working_path, addon_data['id'])
         if os.path.exists(target_folder):
             shutil.rmtree(target_folder)
             pass
@@ -269,11 +269,13 @@ class Updater(object):
             os.mkdir(target_folder)
             pass
 
-        addon_xml_filename = os.path.join(source_folder, 'addon.xml')
-        addon_data = _read_addon_data(addon_xml_filename)
         zip_filename = os.path.join(target_folder, '%s-%s.zip' % (addon_data['id'], addon_data['version']))
         _zip_files(source_folder, zip_filename)
         _copy_files(source_folder, target_folder, addon_data['version'])
+
+        if addon['name'] != addon_data['id']:
+            addon['alt_name'] = addon_data['id']
+            pass
         return addon_data['version']
 
 
@@ -296,28 +298,37 @@ if __name__ == "__main__":
     os.chdir(repo_path)
 
     for addon in addons:
-        platform = addon['platform']
+        platform = str(addon['platform'])
         if platform != 'bromix':
-            version = addon['version']
-            if not version.find('alpha') >= 0 and not version.find('beta') >= 0:
-                args = ['git', 'checkout', platform]
+            version = str(addon['version'])
+            #if not version.find('alpha') >= 0 and not version.find('beta') >= 0:
+            if True:
+                """
+                args = ['git', 'checkout', '-t', '-b', platform, 'origin/%s' % platform]
                 output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
                 print output
 
                 args = ['git', 'pull']
                 output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
                 print output
+                """
 
-                branch_name = '%s_%s' % (platform, addon['name'])
-                args = ['git', 'branch', '-d', branch_name]
-                output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
-                print output
+                try:
+                    branch_name = '%s_%s' % (platform, addon['name'])
+                    args = ['git', 'branch', '-d', branch_name]
+                    output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+                    print output
+                except subprocess.CalledProcessError, ex:
+                    # ignore this exception
+                    pass
 
+                """
                 args = ['git', 'branch', branch_name]
                 output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
                 print output
+                """
 
-                args = ['git', 'checkout', branch_name]
+                args = ['git', 'checkout', '-t', '-b', branch_name, 'origin/%s' % platform]
                 output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
                 print output
 
@@ -329,7 +340,8 @@ if __name__ == "__main__":
                     os.makedirs(addon_path)
                     pass
 
-                zip_filename = os.path.join(working_path, addon['name'], '%s-%s.zip' % (addon['name'], addon['version']))
+                alt_name = addon.get('alt_name', addon['name'])
+                zip_filename = os.path.join(working_path, alt_name, '%s-%s.zip' % (alt_name, addon['version']))
                 fh = open(zip_filename, 'rb')
                 z = zipfile.ZipFile(fh)
                 for name in z.namelist():
@@ -341,7 +353,7 @@ if __name__ == "__main__":
                 output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
                 print output
 
-                message = '[%s] %s' % (addon['name'], addon['version'])
+                message = '[%s] %s' % (alt_name, addon['version'])
                 args = ['git', 'commit', '-m', message]
                 output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
                 print output
