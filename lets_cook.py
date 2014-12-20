@@ -4,6 +4,7 @@ import os
 import shutil
 import zipfile
 import requests
+import subprocess
 
 try:
     import xml.etree.cElementTree as ET
@@ -18,7 +19,11 @@ class Updater(object):
         self._working_path = working_path
         self._json_data = json_data
         self._download_tmp = os.path.join(self._working_path, '_download_tmp_')
+        self._updated_addons = []
         pass
+
+    def get_updated_addons(self):
+        return self._updated_addons
 
     def _generate_addons_xml_and_md5(self):
         def _save_file(filename, data):
@@ -117,8 +122,10 @@ class Updater(object):
                     print 'Adding "%s" (updated)' % display_name
                     zip_filename = self._download_addon(addon)
                     source_folder = self._extract_addon(addon, zip_filename)
-                    self._create_repo_addon(addon, source_folder)
+                    version = self._create_repo_addon(addon, source_folder)
                     addon['updated'] = remote_updated
+                    addon['version'] = version
+                    self._updated_addons.append(addon)
                     changed = True
                     pass
                 else:
@@ -166,7 +173,7 @@ class Updater(object):
         ignore_list = self._json_data['global']['ignore']
         for name in zip_file.namelist():
             last_component = name.split('/')
-            last_component = last_component[len(last_component)-1]
+            last_component = last_component[len(last_component) - 1]
 
             # skip ignored files
             if last_component in ignore_list:
@@ -267,7 +274,7 @@ class Updater(object):
         zip_filename = os.path.join(target_folder, '%s-%s.zip' % (addon_data['id'], addon_data['version']))
         _zip_files(source_folder, zip_filename)
         _copy_files(source_folder, target_folder, addon_data['version'])
-        pass
+        return addon_data['version']
 
 
 if __name__ == "__main__":
@@ -282,5 +289,57 @@ if __name__ == "__main__":
 
     with open(json_filename, 'w') as json_file:
         json.dump(json_data, json_file, sort_keys=True, indent=4, encoding='utf-8')
+        pass
+
+    addons = updater.get_updated_addons()
+    repo_path = os.path.join(working_path, json_data['global']['public-repo-path'])
+    os.chdir(repo_path)
+
+    for addon in addons:
+        platform = addon['platform']
+        version = addon['version']
+        if not version.find('alpha') >= 0 and not version.find('beta') >= 0:
+            args = ['git', 'checkout', platform]
+            output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+            print output
+
+            args = ['git', 'pull']
+            output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+            print output
+
+            branch_name = '%s_%s' % (platform, addon['name'])
+            args = ['git', 'branch', branch_name]
+            output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+            print output
+
+            args = ['git', 'checkout', branch_name]
+            output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+            print output
+
+            addon_path = os.path.join(repo_path, addon['name'])
+            if os.path.exists(addon_path):
+                shutil.rmtree(addon_path)
+                pass
+            if not os.path.exists(addon_path):
+                os.makedirs(addon_path)
+                pass
+
+            zip_filename = os.path.join(working_path, addon['name'], '%s-%s.zip' % (addon['name'], addon['version']))
+            fh = open(zip_filename, 'rb')
+            z = zipfile.ZipFile(fh)
+            for name in z.namelist():
+                out_path = repo_path
+                z.extract(name, out_path)
+            fh.close()
+
+            args = ['git', 'add', '*']
+            output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+            print output
+
+            message = '[%s] %s' % (addon['name'], addon['version'])
+            args = ['git', 'commit', '-m', message]
+            output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+            print output
+            pass
         pass
     pass
