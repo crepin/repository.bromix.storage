@@ -211,7 +211,7 @@ class Updater(object):
     def _create_repo_addon(self, addon, source_folder):
         def _read_addon_data(addon_xml_filename):
             xml = ET.parse(addon_xml_filename)
-            root = xml.getroot();
+            root = xml.getroot()
             addon_id = root.get('id', None)
             addon_version = root.get('version', None)
             return {'id': addon_id, 'version': addon_version}
@@ -297,49 +297,55 @@ if __name__ == "__main__":
 
     for addon in addons:
         platform = addon['platform']
-        version = addon['version']
-        if not version.find('alpha') >= 0 and not version.find('beta') >= 0:
-            args = ['git', 'checkout', platform]
-            output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
-            print output
+        if platform != 'bromix':
+            version = addon['version']
+            if not version.find('alpha') >= 0 and not version.find('beta') >= 0:
+                args = ['git', 'checkout', platform]
+                output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+                print output
 
-            args = ['git', 'pull']
-            output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
-            print output
+                args = ['git', 'pull']
+                output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+                print output
 
-            branch_name = '%s_%s' % (platform, addon['name'])
-            args = ['git', 'branch', branch_name]
-            output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
-            print output
+                branch_name = '%s_%s' % (platform, addon['name'])
+                args = ['git', 'branch', '-d', branch_name]
+                output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+                print output
 
-            args = ['git', 'checkout', branch_name]
-            output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
-            print output
+                args = ['git', 'branch', branch_name]
+                output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+                print output
 
-            addon_path = os.path.join(repo_path, addon['name'])
-            if os.path.exists(addon_path):
-                shutil.rmtree(addon_path)
+                args = ['git', 'checkout', branch_name]
+                output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+                print output
+
+                addon_path = os.path.join(repo_path, addon['name'])
+                if os.path.exists(addon_path):
+                    shutil.rmtree(addon_path)
+                    pass
+                if not os.path.exists(addon_path):
+                    os.makedirs(addon_path)
+                    pass
+
+                zip_filename = os.path.join(working_path, addon['name'], '%s-%s.zip' % (addon['name'], addon['version']))
+                fh = open(zip_filename, 'rb')
+                z = zipfile.ZipFile(fh)
+                for name in z.namelist():
+                    out_path = repo_path
+                    z.extract(name, out_path)
+                fh.close()
+
+                args = ['git', 'add', '*']
+                output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+                print output
+
+                message = '[%s] %s' % (addon['name'], addon['version'])
+                args = ['git', 'commit', '-m', message]
+                output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+                print output
                 pass
-            if not os.path.exists(addon_path):
-                os.makedirs(addon_path)
-                pass
-
-            zip_filename = os.path.join(working_path, addon['name'], '%s-%s.zip' % (addon['name'], addon['version']))
-            fh = open(zip_filename, 'rb')
-            z = zipfile.ZipFile(fh)
-            for name in z.namelist():
-                out_path = repo_path
-                z.extract(name, out_path)
-            fh.close()
-
-            args = ['git', 'add', '*']
-            output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
-            print output
-
-            message = '[%s] %s' % (addon['name'], addon['version'])
-            args = ['git', 'commit', '-m', message]
-            output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
-            print output
             pass
         pass
     pass
