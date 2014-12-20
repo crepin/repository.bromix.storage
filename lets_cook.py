@@ -1,86 +1,8 @@
 import json
-
-root_url = 'https://github.com/bromix/'
-
-# official repository
-resources = [{'name': 'plugin.video.9gagtv', 'branch': 'master'},
-             {'name': 'plugin.audio.soundcloud', 'branch': 'master'},
-             {'name': 'plugin.video.7tv', 'branch': 'master'},
-             {'name': 'plugin.picture.bromix.break', 'branch': 'master'},
-             {'name': 'plugin.video.bromix.tlc_de', 'branch': 'master'},
-             {'name': 'plugin.video.bromix.dmax_de', 'branch': 'master'},
-             {'name': 'plugin.video.netzkino_de', 'branch': 'master'},
-
-             # bromix repository
-             {'name': 'plugin.video.bromix.youtube', 'branch': 'alpha29'},
-             {'name': 'plugin.video.bromix.myvideo_de', 'branch': 'master'},
-             {'name': 'plugin.video.bromix.break', 'branch': 'master'},
-             {'name': 'plugin.video.bromix.rtl_now', 'branch': 'master'},
-             {'name': 'plugin.video.bromix.rtl2_now', 'branch': 'master'},
-             {'name': 'plugin.video.bromix.vox_now', 'branch': 'master'},
-
-             {'name': 'repository.bromix', 'branch': 'master'}]
-
+import md5
 import os
 import shutil
-import md5
 import zipfile
-
-
-def cleanUp():
-    print("Cleaning up...")
-    local_path = os.getcwd()
-    dl_path = os.path.join(local_path, '_dl_tmp')
-    if os.path.exists(dl_path):
-        shutil.rmtree(dl_path)
-
-
-def generateXml():
-    def _save_file(filename, data):
-        if os.path.exists(filename):
-            os.remove(filename)
-        open(filename, "w").write(data)
-        pass
-
-    addons_xml = u"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<addons>\n"
-
-    print("Creating addon.xml and addon.xml.md5...")
-    local_path = os.getcwd()
-    for resource in resources:
-        resource_path = os.path.join(local_path, resource['name'])
-        if os.path.exists(resource_path):
-            print("Reading '%s'" % (resource['name']))
-            addon_xml_file_name = os.path.join(resource_path, 'addon.xml')
-            if os.path.exists(addon_xml_file_name):
-                xml_lines = open(addon_xml_file_name, "r").read().splitlines()
-                # new addon
-                addon_xml = ""
-
-                # loop thru cleaning each line
-                for line in xml_lines:
-                    # skip encoding format line
-                    if ( line.find("<?xml") >= 0 ):
-                        continue
-                    # add line
-                    addon_xml += unicode(line.rstrip() + "\n", "UTF-8")
-
-                # we succeeded so add to our final addons.xml text
-                addons_xml += addon_xml.rstrip() + "\n\n"
-        else:
-            print("Skipping '%s' (Folder no found)" % (resource['name']))
-        pass
-
-    # clean and add closing tag
-    addons_xml = addons_xml.strip() + u"\n</addons>\n"
-
-    addons_xml_file_name = os.path.join(local_path, 'addons.xml')
-    _save_file(addons_xml_file_name, addons_xml.encode("UTF-8"))
-
-    m = md5.new(open(addons_xml_file_name).read()).hexdigest()
-    _save_file(addons_xml_file_name + '.md5', m)
-    pass
-
-
 import requests
 
 try:
@@ -98,7 +20,52 @@ class Updater(object):
         self._download_tmp = os.path.join(self._working_path, '_download_tmp_')
         pass
 
-    pass
+    def _generate_addons_xml_and_md5(self):
+        def _save_file(filename, data):
+            if os.path.exists(filename):
+                os.remove(filename)
+            open(filename, "w").write(data)
+            pass
+
+        print 'Creating addon.xml and addon.xml.md5...'
+        xml = u"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<addons>\n"
+        addons = self._json_data['addons']
+        for addon in addons:
+            resource_path = os.path.join(self._working_path, addon['name'])
+            if os.path.exists(resource_path):
+                print 'Reading "%s"' % addon['name']
+                addon_xml_filename = os.path.join(resource_path, 'addon.xml')
+                if os.path.exists(addon_xml_filename):
+                    xml_lines = open(addon_xml_filename, "r").read().splitlines()
+                    # new addon
+                    addon_xml = ""
+
+                    # loop thru cleaning each line
+                    for line in xml_lines:
+                        # skip encoding format line
+                        if line.find("<?xml") >= 0:
+                            continue
+                        # add line
+                        addon_xml += unicode(line.rstrip() + "\n", "UTF-8")
+                        pass
+
+                    # we succeeded so add to our final addons.xml text
+                    xml += addon_xml.rstrip() + "\n\n"
+                    pass
+                pass
+            else:
+                print 'Folder not found "%s"' % addon['name']
+            pass
+
+        # clean and add closing tag
+        xml = xml.strip() + u"\n</addons>\n"
+
+        addons_xml_filename = os.path.join(self._working_path, 'addons.xml')
+        _save_file(addons_xml_filename, xml.encode("UTF-8"))
+
+        m = md5.new(open(addons_xml_filename).read()).hexdigest()
+        _save_file(addons_xml_filename + '.md5', m)
+        pass
 
     def _create_download_temp(self):
         if os.path.exists(self._download_tmp):
@@ -135,6 +102,7 @@ class Updater(object):
     def _process_addons(self):
         result = []
 
+        changed = False
         for addon in self._json_data['addons']:
             display_name = self._make_addon_display_name(addon)
             print '================================================================================'
@@ -150,6 +118,8 @@ class Updater(object):
                     zip_filename = self._download_addon(addon)
                     source_folder = self._extract_addon(addon, zip_filename)
                     self._create_repo_addon(addon, source_folder)
+                    addon['updated'] = remote_updated
+                    changed = True
                     pass
                 else:
                     print 'Up to date "%s"' % display_name
@@ -159,7 +129,7 @@ class Updater(object):
                 print 'Failed "%s" (%s)' % (display_name, ex.__str__())
                 pass
             pass
-        pass
+        return changed
 
     def _download_addon(self, addon):
         display_name = self._make_addon_display_name(addon)
@@ -220,7 +190,12 @@ class Updater(object):
         print('Preparing...')
         self._create_download_temp()
 
-        self._process_addons()
+        if self._process_addons():
+            self._generate_addons_xml_and_md5()
+            pass
+        else:
+            print 'Nothing to update'
+            pass
 
         self._remove_download_temp()
         print('Update finished')
@@ -308,9 +283,4 @@ if __name__ == "__main__":
     with open(json_filename, 'w') as json_file:
         json.dump(json_data, json_file, sort_keys=True, indent=4, encoding='utf-8')
         pass
-    """
-    compress()
-    generateXml()
-    cleanUp()
-    print("Done")
-    """
+    pass

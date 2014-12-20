@@ -2,59 +2,73 @@
     "addons": [
         {
             "branch": "master", 
-            "name": "plugin.video.9gagtv"
+            "name": "plugin.video.9gagtv", 
+            "updated": "2014-12-07T17:36:09+01:00"
         }, 
         {
             "branch": "master", 
-            "name": "plugin.audio.soundcloud"
+            "name": "plugin.audio.soundcloud", 
+            "updated": "2014-11-29T17:36:33+01:00"
         }, 
         {
             "branch": "master", 
-            "name": "plugin.video.7tv"
+            "name": "plugin.video.7tv", 
+            "updated": "2014-12-17T21:30:21+01:00"
         }, 
         {
             "branch": "master", 
-            "name": "plugin.picture.bromix.break"
+            "name": "plugin.picture.bromix.break", 
+            "updated": "2014-11-27T20:07:02+01:00"
         }, 
         {
             "branch": "master", 
-            "name": "plugin.video.bromix.tlc_de"
+            "name": "plugin.video.bromix.tlc_de", 
+            "updated": "2014-07-15T07:37:34+02:00"
         }, 
         {
             "branch": "master", 
-            "name": "plugin.video.bromix.dmax_de"
+            "name": "plugin.video.bromix.dmax_de", 
+            "updated": "2014-07-15T07:42:17+02:00"
         }, 
         {
             "branch": "master", 
-            "name": "plugin.video.netzkino_de"
+            "name": "plugin.video.netzkino_de", 
+            "updated": "2014-12-15T23:38:44+01:00"
         }, 
         {
             "branch": "alpha29", 
-            "name": "plugin.video.bromix.youtube"
+            "name": "plugin.video.bromix.youtube", 
+            "updated": "2014-12-14T12:39:54+01:00"
         }, 
         {
             "branch": "master", 
-            "name": "plugin.video.bromix.myvideo_de"
+            "name": "plugin.video.bromix.myvideo_de", 
+            "updated": "2014-11-05T18:48:57+01:00"
         }, 
         {
             "branch": "master", 
-            "name": "plugin.video.bromix.break"
+            "name": "plugin.video.bromix.break", 
+            "updated": "2014-11-27T20:08:18+01:00"
         }, 
         {
             "branch": "master", 
-            "name": "plugin.video.bromix.rtl_now"
+            "name": "plugin.video.bromix.rtl_now", 
+            "updated": "2014-12-19T18:43:06+01:00"
         }, 
         {
             "branch": "master", 
-            "name": "plugin.video.bromix.rtl2_now"
+            "name": "plugin.video.bromix.rtl2_now", 
+            "updated": "2014-12-19T19:10:53+01:00"
         }, 
         {
             "branch": "master", 
-            "name": "plugin.video.bromix.vox_now"
+            "name": "plugin.video.bromix.vox_now", 
+            "updated": "2014-12-19T19:08:53+01:00"
         }, 
         {
             "branch": "master", 
-            "name": "repository.bromix"
+            "name": "repository.bromix", 
+            "updated": "2014-09-20T00:23:19+02:00"
         }
     ], 
     "global": {
