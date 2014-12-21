@@ -73,11 +73,11 @@
             "version": "2.0.4"
         }, 
         {
-            "branch": "master", 
+            "branch": "html_fix", 
             "name": "plugin.video.bromix.rtl2_now", 
             "platform": "bromix", 
-            "updated": "2014-12-21T22:43:42+01:00", 
-            "version": "2.0.4"
+            "updated": "2014-12-21T23:14:39+01:00", 
+            "version": "2.0.5~beta1"
         }, 
         {
             "branch": "master", 
