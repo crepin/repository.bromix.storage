@@ -1,3 +1,6 @@
+1.0.1 (2014-12-21)
+UPD: version bump for repo test
+
 1.0.0 (2014-11-05)
 UPD: removed alpha status
 ADD: support for 'Watch Later'

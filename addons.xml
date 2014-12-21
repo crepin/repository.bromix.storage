@@ -190,7 +190,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.bromix.myvideo_de" name="MyVideo.de" version="1.0.0" provider-name="bromix">
+<addon id="plugin.video.bromix.myvideo_de" name="MyVideo.de" version="1.0.1" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.requests" version="2.3.0"/>
