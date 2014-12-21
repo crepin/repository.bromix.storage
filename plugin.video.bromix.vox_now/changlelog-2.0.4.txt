@@ -1,3 +1,6 @@
+2.0.4 (2014-12-21)
+FIX: possible crash while trying to play a video
+
 2.0.3 (2014-12-19)
 UPD: improved performance
 
