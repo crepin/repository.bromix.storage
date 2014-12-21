@@ -69,22 +69,22 @@
             "branch": "master", 
             "name": "plugin.video.bromix.rtl_now", 
             "platform": "bromix", 
-            "updated": "2014-12-21T22:47:13+01:00", 
-            "version": "2.0.4"
+            "updated": "2014-12-22T00:11:57+01:00", 
+            "version": "2.0.5"
         }, 
         {
             "branch": "html_fix", 
             "name": "plugin.video.bromix.rtl2_now", 
             "platform": "bromix", 
-            "updated": "2014-12-21T23:14:39+01:00", 
-            "version": "2.0.5~beta1"
+            "updated": "2014-12-22T00:10:44+01:00", 
+            "version": "2.0.5"
         }, 
         {
             "branch": "master", 
             "name": "plugin.video.bromix.vox_now", 
             "platform": "bromix", 
-            "updated": "2014-12-21T22:48:29+01:00", 
-            "version": "2.0.4"
+            "updated": "2014-12-22T00:12:39+01:00", 
+            "version": "2.0.5"
         }, 
         {
             "branch": "master", 
