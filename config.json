@@ -69,8 +69,8 @@
             "branch": "master", 
             "name": "plugin.video.bromix.rtl_now", 
             "platform": "bromix", 
-            "updated": "2014-12-22T00:11:57+01:00", 
-            "version": "2.0.5"
+            "updated": "2014-12-22T15:24:16+01:00", 
+            "version": "2.0.6"
         }, 
         {
             "branch": "html_fix", 
@@ -83,8 +83,8 @@
             "branch": "master", 
             "name": "plugin.video.bromix.vox_now", 
             "platform": "bromix", 
-            "updated": "2014-12-22T00:12:39+01:00", 
-            "version": "2.0.5"
+            "updated": "2014-12-22T15:26:50+01:00", 
+            "version": "2.0.6"
         }, 
         {
             "branch": "master", 
