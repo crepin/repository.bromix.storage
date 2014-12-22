@@ -1,3 +1,6 @@
+2.0.7 (2014-12-22)
+ADD: view mode wizard (kodion)
+
 2.0.6 (2014-12-22)
 UPD: removed unused settings
 
