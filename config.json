@@ -46,11 +46,11 @@
             "version": "2.0.4"
         }, 
         {
-            "branch": "alpha29", 
+            "branch": "beta1", 
             "name": "plugin.video.bromix.youtube", 
             "platform": "bromix", 
-            "updated": "2014-12-14T12:39:54+01:00", 
-            "version": "1.0.0~alpha29"
+            "updated": "2014-12-23T22:33:25+01:00", 
+            "version": "5.0.0~beta1"
         }, 
         {
             "branch": "master", 
