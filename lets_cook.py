@@ -34,6 +34,9 @@ class Updater(object):
         xml = u"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<addons>\n"
         addons = self._json_data['addons']
         for addon in addons:
+            platform = str(addon['platform'])
+            if platform != 'bromix':
+                continue
             resource_path = os.path.join(self._working_path, addon['name'])
             if os.path.exists(resource_path):
                 print 'Reading "%s"' % addon['name']
