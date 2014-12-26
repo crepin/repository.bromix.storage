@@ -23,9 +23,6 @@ class Updater(object):
         self._updated_addons = []
         pass
 
-    def get_updated_addons(self):
-        return self._updated_addons
-
     def _generate_addons_xml_and_md5(self):
         def _save_file(filename, data):
             if os.path.exists(filename):
@@ -201,6 +198,8 @@ class Updater(object):
         self._process_addons()
         self._generate_addons_xml_and_md5()
 
+        self._update_repo()
+
         self._remove_download_temp()
         print('Update finished')
         return self._json_data
@@ -275,6 +274,58 @@ class Updater(object):
         _copy_files(source_folder, target_folder, addon_data['version'])
         return addon_data['version']
 
+    def _update_repo(self):
+        addons = self._updated_addons
+        repo_path = os.path.join(working_path, json_data['global']['public-repo-path'])
+        os.chdir(repo_path)
+
+        for addon in addons:
+            platform = str(addon['platform'])
+            if platform != 'bromix':
+                version = str(addon['version'])
+                #if not version.find('alpha') >= 0 and not version.find('beta') >= 0:
+                if True:
+                    addon_id = addon['name']
+                    re_match = re.match(r'([a-z]+).([a-z]+).(?P<name>.+)', addon_id)
+                    if not re_match:
+                        raise Exception('Failed to match "%s"' % addon_id)
+                    addon_name = re_match.group('name')
+                    addon_name = re.sub(r'[^a-z]', '_', addon_name)
+
+                    try:
+                        branch_name = '%s_%s' % (platform, addon_name)
+                        args = ['git', 'branch', '-d', branch_name]
+                        output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+                        print output
+                    except subprocess.CalledProcessError, ex:
+                        # ignore this exception
+                        pass
+
+                    args = ['git', 'checkout', '-t', '-b', branch_name, 'upstream/%s' % platform]
+                    output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+                    print output
+
+                    addon_path = os.path.join(repo_path, addon_id)
+                    if os.path.exists(addon_path):
+                        shutil.rmtree(addon_path)
+                        pass
+
+                    addon_source_path = os.path.join(self._download_tmp, addon_id)
+                    shutil.copytree(addon_source_path, addon_path)
+
+                    args = ['git', 'add', '*']
+                    output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+                    print output
+
+                    message = '[%s] %s' % (addon_id, addon['version'])
+                    args = ['git', 'commit', '-m', message]
+                    output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+                    print output
+                    pass
+                pass
+            pass
+        pass
+
 
 if __name__ == "__main__":
     working_path = os.getcwd()
@@ -288,63 +339,5 @@ if __name__ == "__main__":
 
     with open(json_filename, 'w') as json_file:
         json.dump(json_data, json_file, sort_keys=True, indent=4, encoding='utf-8')
-        pass
-
-    addons = updater.get_updated_addons()
-    repo_path = os.path.join(working_path, json_data['global']['public-repo-path'])
-    os.chdir(repo_path)
-
-    for addon in addons:
-        platform = str(addon['platform'])
-        if platform != 'bromix':
-            version = str(addon['version'])
-            #if not version.find('alpha') >= 0 and not version.find('beta') >= 0:
-            if True:
-                addon_id = addon['name']
-                re_match = re.match(r'([a-z]+).([a-z]+).(?P<name>.+)', addon_id)
-                if not re_match:
-                    raise Exception('Failed to match "%s"' % addon_id)
-                addon_name = re_match.group('name')
-                addon_name = re.sub(r'[^a-z]', '_', addon_name)
-
-                try:
-                    branch_name = '%s_%s' % (platform, addon_name)
-                    args = ['git', 'branch', '-d', branch_name]
-                    output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
-                    print output
-                except subprocess.CalledProcessError, ex:
-                    # ignore this exception
-                    pass
-
-                args = ['git', 'checkout', '-t', '-b', branch_name, 'origin/%s' % platform]
-                output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
-                print output
-
-                addon_path = os.path.join(repo_path, addon_id)
-                if os.path.exists(addon_path):
-                    shutil.rmtree(addon_path)
-                    pass
-                if not os.path.exists(addon_path):
-                    os.makedirs(addon_path)
-                    pass
-
-                zip_filename = os.path.join(working_path, addon_id, '%s-%s.zip' % (addon_id, addon['version']))
-                fh = open(zip_filename, 'rb')
-                z = zipfile.ZipFile(fh)
-                for name in z.namelist():
-                    out_path = repo_path
-                    z.extract(name, out_path)
-                fh.close()
-
-                args = ['git', 'add', '*']
-                output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
-                print output
-
-                message = '[%s] %s' % (addon_id, addon['version'])
-                args = ['git', 'commit', '-m', message]
-                output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
-                print output
-                pass
-            pass
         pass
     pass
