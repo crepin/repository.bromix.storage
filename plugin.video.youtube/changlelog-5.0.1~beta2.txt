@@ -1,4 +1,4 @@
-5.0.1~beta (2014-12-27)
+5.0.1~beta2 (2014-12-27)
 UPD: new client implementation
 
 5.0.0 (2014-12-27)
