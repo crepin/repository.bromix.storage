@@ -1,3 +1,9 @@
+5.0.0 (2014-12-27)
+DEL: removed beta
+
+5.0.0~beta3 (2014-12-27)
+UPD: some minor tests
+
 5.0.0~beta2 (2014-12-26)
 ADD: new rating system - like/dislike/remove
 ADD: show confirmation before remove a video or deleting a playlist
