@@ -35,8 +35,6 @@ class Updater(object):
         addons = self._json_data['addons']
         for addon in addons:
             platform = str(addon['platform'])
-            if platform != 'bromix':
-                continue
             resource_path = os.path.join(self._working_path, addon['name'])
             if os.path.exists(resource_path):
                 print 'Reading "%s"' % addon['name']
@@ -282,12 +280,16 @@ class Updater(object):
         repo_path = os.path.join(working_path, json_data['global']['public-repo-path'])
         os.chdir(repo_path)
 
+        # fetch upstream
+        args = ['git', 'fetch', 'upstream']
+        output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
+        print output
+
         for addon in addons:
             platform = str(addon['platform'])
             if platform != 'bromix':
                 version = str(addon['version'])
-                #if not version.find('alpha') >= 0 and not version.find('beta') >= 0:
-                if True:
+                if not version.find('alpha') >= 0 and not version.find('beta') >= 0:
                     addon_id = addon['name']
                     re_match = re.match(r'([a-z]+).([a-z]+).(?P<name>.+)', addon_id)
                     if not re_match:
@@ -295,6 +297,7 @@ class Updater(object):
                     addon_name = re_match.group('name')
                     addon_name = re.sub(r'[^a-z]', '_', addon_name)
 
+                    # remove old locale branch
                     try:
                         branch_name = '%s_%s' % (platform, addon_name)
                         args = ['git', 'branch', '-d', branch_name]
@@ -304,22 +307,25 @@ class Updater(object):
                         # ignore this exception
                         pass
 
+                    # create new local branch from upstream
                     args = ['git', 'checkout', '-t', '-b', branch_name, 'upstream/%s' % platform]
                     output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
                     print output
 
+                    # copy data to repos
                     addon_path = os.path.join(repo_path, addon_id)
                     if os.path.exists(addon_path):
                         shutil.rmtree(addon_path)
                         pass
-
                     addon_source_path = os.path.join(self._download_tmp, addon_id)
                     shutil.copytree(addon_source_path, addon_path)
 
+                    # add all files
                     args = ['git', 'add', '*']
                     output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
                     print output
 
+                    # create commit
                     message = '[%s] %s' % (addon_id, addon['version'])
                     args = ['git', 'commit', '-m', message]
                     output = subprocess.check_output(args=args, shell=True, stderr=subprocess.STDOUT)
