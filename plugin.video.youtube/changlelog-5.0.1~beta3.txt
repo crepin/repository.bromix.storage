@@ -1,3 +1,6 @@
+5.0.1~beta3 (2014-12-28)
+UPD: advanced error logging (kodion client)
+
 5.0.1~beta2 (2014-12-27)
 UPD: new client implementation
 
