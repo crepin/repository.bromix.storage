@@ -1,4 +1,12 @@
-5.0.1~beta (2014-12-29)
+5.0.1~beta5 (2014-12-29)
+ADD: Portuguese (thx 2 enen92)
+ADD: Polish (thx 2 D.K.)
+ADD: Russian (thx 2 BytEvil)
+ADD: Spanish (thx 2 PatOso)
+ADD: French (thx 2 roondar)
+FIX: some live streams should work
+FIX: update meta data for video played via ext. url
+FIX: remove video from 'Watch Later' playlist
 REV: reverted to requests
 
 5.0.0 (2014-12-27)

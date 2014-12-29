@@ -166,7 +166,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="5.0.1~beta4" provider-name="bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="5.0.1~beta5" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.requests" version="2.3.0"/>
@@ -176,9 +176,11 @@
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Plugin for YouTube</summary>
+        <description lang="en">YouTube is a one of the biggest video-sharing websites of the world.</description>
 		<summary lang="de">Plugin für YouTube</summary>
-		<description lang="en">YouTube is a one of the biggest video-sharing websites of the world.</description>
-		<description lang="de">YouTube ist ein eines der größten Video-Sharing-Websites der Welt.</description>
+        <description lang="de">YouTube ist ein eines der größten Video-Sharing-Websites der Welt.</description>
+        <summary lang="pl">Wtyczka YouTube</summary>
+        <description lang="pl">YouTube jest jednym z największych na świecie serwisów do udostępniania wideo w sieci.</description>
 		<disclaimer lang="en"></disclaimer>
 		<language></language>
 		<platform>all</platform>
