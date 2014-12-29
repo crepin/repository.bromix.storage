@@ -169,9 +169,13 @@ class Updater(object):
         old_folder_name = '%s-%s' % (addon['name'], addon['branch'])
         new_folder_name = '%s' % (addon['name'])
 
+        zip_folder_name = None
         ignore_list = self._json_data['global']['ignore']
         for name in zip_file.namelist():
             last_component = name.split('/')
+            if zip_folder_name is None:
+                zip_folder_name = last_component[0]
+                pass
             last_component = last_component[len(last_component) - 1]
 
             # skip ignored files
@@ -190,7 +194,7 @@ class Updater(object):
 
         zip_file.close()
         os.remove(zip_filename)
-        return os.path.join(self._download_tmp, addon['name'])
+        return os.path.join(self._download_tmp, zip_folder_name)
 
     def execute(self):
         print('Preparing...')

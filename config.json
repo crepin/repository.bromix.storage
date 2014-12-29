@@ -46,11 +46,11 @@
             "version": "2.0.4"
         }, 
         {
-            "branch": "kodion_client_test_beta3", 
+            "branch": "v5_0_1_b4", 
             "name": "plugin.video.youtube", 
             "platform": "helix", 
-            "updated": "2014-12-28T19:05:20+01:00", 
-            "version": "5.0.1~beta3"
+            "updated": "2014-12-29T17:04:24+01:00", 
+            "version": "5.0.1~beta4"
         }, 
         {
             "branch": "master", 
