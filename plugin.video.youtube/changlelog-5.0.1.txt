@@ -1,4 +1,4 @@
-5.0.1~beta6 (2014-12-31)
+5.0.1 (2014-12-31)
 ADD: 'Play all' (default, reverse, shuffle)
 ADD: Italian (thx 2 peppe_sr)
 ADD: Portuguese (Brazil) (thx 2 ASH_Macedo)

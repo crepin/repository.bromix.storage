@@ -124,6 +124,7 @@ class Updater(object):
                     version = self._create_repo_addon(addon, source_folder)
                     addon['updated'] = remote_updated
                     addon['version'] = version
+                    addon['source_folder'] = source_folder
                     self._updated_addons.append(addon)
                     changed = True
                     pass
@@ -321,8 +322,8 @@ class Updater(object):
                     if os.path.exists(addon_path):
                         shutil.rmtree(addon_path)
                         pass
-                    addon_source_path = os.path.join(self._download_tmp, addon_id)
-                    shutil.copytree(addon_source_path, addon_path)
+                    shutil.copytree(addon['source_folder'], addon_path)
+                    del addon['source_folder']
 
                     # add all files
                     args = ['git', 'add', '*']

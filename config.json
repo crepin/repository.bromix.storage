@@ -46,11 +46,11 @@
             "version": "2.0.4"
         }, 
         {
-            "branch": "v5-0-1-b6", 
+            "branch": "v5-0-1", 
             "name": "plugin.video.youtube", 
             "platform": "helix", 
-            "updated": "2014-12-31T00:47:39+01:00", 
-            "version": "5.0.1~beta6"
+            "updated": "2014-12-31T15:38:26+01:00", 
+            "version": "5.0.1"
         }, 
         {
             "branch": "master", 
