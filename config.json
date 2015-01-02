@@ -46,12 +46,11 @@
             "version": "2.0.4"
         }, 
         {
-            "branch": "v5-0-2", 
+            "branch": "v5.0.3-b1", 
             "name": "plugin.video.youtube", 
             "platform": "bromix", 
-            "source_folder": "D:\\_XBMC\\repository.bromix.storage\\_download_tmp_\\plugin.video.youtube-5-0-2", 
-            "updated": "2015-01-01T20:48:05+01:00", 
-            "version": "5.0.2"
+            "updated": "2015-01-02T19:02:56+01:00", 
+            "version": "5.0.3~beta1"
         }, 
         {
             "branch": "master", 

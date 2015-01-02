@@ -124,7 +124,6 @@ class Updater(object):
                     version = self._create_repo_addon(addon, source_folder)
                     addon['updated'] = remote_updated
                     addon['version'] = version
-                    addon['source_folder'] = source_folder
                     self._updated_addons.append(addon)
                     changed = True
                     pass
@@ -167,35 +166,37 @@ class Updater(object):
         print 'Extracting "%s"' % display_name
 
         zip_file = zipfile.ZipFile(open(zip_filename, 'rb'))
-        old_folder_name = '%s-%s' % (addon['name'], addon['branch'])
         new_folder_name = '%s' % (addon['name'])
 
         zip_folder_name = None
         ignore_list = self._json_data['global']['ignore']
         for name in zip_file.namelist():
-            last_component = name.split('/')
-            if zip_folder_name is None:
-                zip_folder_name = last_component[0]
-                pass
-            last_component = last_component[len(last_component) - 1]
+            name_components = name.split('/')
 
             # skip ignored files
-            if last_component in ignore_list:
+            if name_components[len(name_components) - 1] in ignore_list:
                 continue
-            correct_path = os.path.join(self._download_tmp, name)
-            correct_path = correct_path.replace(old_folder_name, new_folder_name)
-            if correct_path.endswith('/'):
+
+            if len(name_components) > 0:
+                name_components[0] = new_folder_name
+                pass
+
+            correct_path = os.path.join(self._download_tmp, *name_components)
+            if correct_path.replace('\\', '/').endswith('/'):
                 if not os.path.exists(correct_path):
                     os.mkdir(correct_path)
+                    pass
+                pass
             else:
                 tmp_file = open(correct_path, 'wb')
                 tmp_file.write(zip_file.read(name))
                 tmp_file.close()
+                pass
             pass
 
         zip_file.close()
         os.remove(zip_filename)
-        return os.path.join(self._download_tmp, zip_folder_name)
+        return os.path.join(self._download_tmp, new_folder_name)
 
     def execute(self):
         print('Preparing...')
@@ -322,8 +323,8 @@ class Updater(object):
                     if os.path.exists(addon_path):
                         shutil.rmtree(addon_path)
                         pass
-                    shutil.copytree(addon['source_folder'], addon_path)
-                    del addon['source_folder']
+                    source_folder = os.path.join(self._download_tmp, addon['name'])
+                    shutil.copytree(source_folder, addon_path)
 
                     # add all files
                     args = ['git', 'add', '*']
